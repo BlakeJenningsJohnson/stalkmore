@@ -1,28 +1,15 @@
-== README
+== Thanks for stalking with Stalkmore!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Authors: Blake Jennings, Johnson Anne Kimsey, Melinda Mizuta, Christina Thompson
 
-Things you may want to cover:
+This is a demo app for an Ada Developer's Academy project. Our learning goals (in not particular order) were:
++ Learn how to work with OAuth
++ Gain experience in consuming with 3rd party APIs
++ Build your own API
++ Coordinate with a larger team
++ Work within the structure of 2 one-week Sprints
++ Learn how to work with Pivotal Tracker
++ Accumulate experience points in Rails
 
-* Ruby version
+The app can be accessed stalkmore.herokuapp.com. Happy stalking!
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
