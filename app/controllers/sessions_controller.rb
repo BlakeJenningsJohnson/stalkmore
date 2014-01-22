@@ -10,6 +10,21 @@ class SessionsController < ApplicationController
     redirect_to "/"
   end
 
+  def sign_out
+    session[:user_id] = nil
+    redirect_to "/", notice: "Signed out!"
+  end
+
+  def greeting
+    if current_user
+      current_user.username
+    else
+      "Potential Stalker"
+    end
+  end
+
+  helper_method :greeting
+
   protected
 
   def auth_hash
