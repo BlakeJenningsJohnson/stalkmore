@@ -9,4 +9,5 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Stalkmore::Application.config.secret_key_base = 'd22e6613c6312e2d8387de9197ea933f61caf08dc4c50b1c8c17318d3b0d5bdfbeed753588da13786d0f1bedc4e3c22273077e20ed240e48b307075994a859a8'
+Stalkmore::Application.config.secret_key_base = 'a0897a373f5a10c3b2e7e7fdbee34889fa8d03e6b9e1d318772d9fcdcfd88f2dff2bf2b72ebe7d534555cf8a66e4748c77eaf0549938ba9f90619ac63081133a'
+
