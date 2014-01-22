@@ -1,6 +1,6 @@
 == Thanks for stalking with Stalkmore!
 
-Authors: Blake Jennings, Johnson Anne Kimsey, Melinda Mizuta, Christina Thompson
+Authors: Blake Jennings Johnson, Anne Kimsey, Melinda Mizuta, Christina Thompson
 
 This is a demo app for an Ada Developer's Academy project. Our learning goals (in not particular order) were:
 + Learn how to work with OAuth
