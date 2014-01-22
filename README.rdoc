@@ -3,13 +3,13 @@
 Authors: Blake Jennings Johnson, Anne Kimsey, Melinda Mizuta, Christina Thompson
 
 This is a demo app for an Ada Developer's Academy project. Our learning goals (in not particular order) were:
-+ Learn how to work with OAuth
-+ Gain experience in consuming with 3rd party APIs
-+ Build your own API
-+ Coordinate with a larger team
-+ Work within the structure of 2 one-week Sprints
-+ Learn how to work with Pivotal Tracker
-+ Accumulate experience points in Rails
+* Learn how to work with OAuth
+* Gain experience in consuming with 3rd party APIs
+* Build your own API
+* Coordinate with a larger team
+* Work within the structure of 2 one-week Sprints
+* Learn how to work with Pivotal Tracker
+* Accumulate experience points in Rails
 
 The app can be accessed stalkmore.herokuapp.com. Happy stalking!
 
