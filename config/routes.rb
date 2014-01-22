@@ -1,4 +1,11 @@
 Stalkmore::Application.routes.draw do
+
+  root to: "sessions#show"
+  get "/auth/:provider/callback", to: "sessions#create"
+  post "/auth/:provider/callback", to: "sessions#create"
+
+  match "/auth/:provider/callback", to: "sessions#create", via: [:get, :post]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
