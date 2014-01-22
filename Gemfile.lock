@@ -124,13 +124,9 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
-<<<<<<< HEAD
   omniauth
-  rails (= 4.0.1)
-=======
   pg
   rails (= 4.0.2)
->>>>>>> 56467118a847824f806790ecefea276f514e9eae
   sass-rails (~> 4.0.0)
   sdoc
   turbolinks
