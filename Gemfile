@@ -55,3 +55,5 @@ gem 'rails_12factor'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'twitter', '3.0.0.rc.1'
