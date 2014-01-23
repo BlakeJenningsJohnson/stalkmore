@@ -44,6 +44,8 @@ end
 
 gem 'rails_12factor'
 
+gem 'tumblr_client'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
