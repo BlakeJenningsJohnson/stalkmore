@@ -44,6 +44,10 @@ end
 
 gem 'rails_12factor'
 
+gem 'figaro'
+
+gem 'twitter', '5.5.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

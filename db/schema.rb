@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140122181729) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "users", force: true do |t|
     t.string "uid"
     t.string "provider"
@@ -20,6 +23,5 @@ ActiveRecord::Schema.define(version: 20140122181729) do
     t.string "avatar_url"
     t.string "username"
   end
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+
 end
