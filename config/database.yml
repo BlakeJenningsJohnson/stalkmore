@@ -20,8 +20,6 @@ development:
   encoding: unicode
   database: stalkmore_development
   pool: 5
-  username: stalkmore
-  password:
   host: localhost
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -50,8 +48,6 @@ test:
   encoding: unicode
   database: stalkmore_test
   pool: 5
-  username: stalkmore
-  password:
   host: localhost
 
 production:
@@ -59,6 +55,4 @@ production:
   encoding: unicode
   database: stalkmore_production
   pool: 5
-  username: stalkmore
-  password:
 
