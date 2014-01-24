@@ -1,0 +1,5 @@
+<% @users.each do |u| %>
+  <ul>
+    <li><img src="<%= u.profile_image_url %>"/> <span class = "username"><%= "@" + u.username %></span></li>
+  </ul>
+<% end %>

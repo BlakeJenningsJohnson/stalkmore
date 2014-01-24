@@ -7,7 +7,6 @@ gem 'rails', '4.0.2'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -44,6 +43,12 @@ end
 
 gem 'rails_12factor'
 
+gem 'tumblr_client'
+
+gem 'figaro'
+
+gem 'twitter'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -55,3 +60,6 @@ gem 'rails_12factor'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+
+
