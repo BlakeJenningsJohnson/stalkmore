@@ -8,6 +8,9 @@ Stalkmore::Application.routes.draw do
   # post "/auth/:provider/callback", to: "sessions#create" # This is what the below 'match' method does.
   match "/auth/:provider/callback", to: "sessions#create", via: [:get, :post]
   get "/test", to: "test#index"
+
+  #twitter search feature
+  get "/twitter/search", to: "twitter#search"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

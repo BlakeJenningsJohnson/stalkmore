@@ -47,6 +47,8 @@ gem 'tumblr_client'
 
 gem 'figaro'
 
+gem 'twitter'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
