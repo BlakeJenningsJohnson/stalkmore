@@ -61,7 +61,5 @@ gem 'twitter'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'twitter', '5.5.1'
 
-gem 'figaro'
 
