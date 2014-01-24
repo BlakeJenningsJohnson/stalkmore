@@ -10,7 +10,11 @@ class TumblesController < ApplicationController
 
     client = Tumblr::Client.new
     @tumbles = client.posts(params[:search])
-    @title = client.posts(params[:search])["blog"]["title"]
-    @url = client.posts(params[:search])["blog"]["url"]
+    if @tumbles == {"status"=>404, "msg"=>"Not Found"}
+      redirect_to "/", notice: "No users match your search." 
+    else
+      @title = client.posts(params[:search])["blog"]["title"]
+      @url = client.posts(params[:search])["blog"]["url"]
+    end
   end
 end
