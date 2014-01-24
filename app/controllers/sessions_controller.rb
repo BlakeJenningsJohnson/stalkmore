@@ -7,12 +7,12 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_or_create_from_omniauth(auth_hash)
     session[:user_id] = @user.id
-    redirect_to "/", notice: "Welcome! Get Stalking ;)"
+    redirect_to "/", notice: "You have been successfully signed in."
   end
 
   def sign_out
     session[:user_id] = nil
-    redirect_to "/", notice: "Signed out!"
+    redirect_to "/", notice: "You have been successfully signed out."
   end
 
   def greeting
