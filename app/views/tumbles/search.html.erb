@@ -1,6 +1,5 @@
 ALL THE SEARCHES<br><br>
 
-<strong><%#= @title %></strong><br>
-<%#= link_to "View #{@title} on Tumblr!", "#{@url}" %>
+<strong><%= @title %></strong><br>
+<%= link_to "View #{@title} on Tumblr!", "#{@url}" %>
 
-<%= @tumbles %>
