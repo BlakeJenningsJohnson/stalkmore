@@ -1,6 +1,7 @@
 Stalkmore::Application.routes.draw do
 
   root to: "sessions#show"
+  get "/search/tumbles", to: "tumbles#search", as: :tumbles
   get "users/sign_in", to: redirect("/auth/developer"), as: :sign_in
   get "/users/sign_out", to: "sessions#sign_out", as: :sign_out
   # get "/auth/:provider/callback", to: "sessions#create"
