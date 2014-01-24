@@ -47,10 +47,10 @@
 
     <%= form_tag('/twitter/search', method: :get, class: "navbar-form navbar-left", role: "search") do %>
       <div class="form-group">
-        <%= text_field_tag :user_name, "", placeholder: "Search", class: "form-control" %>
+        <%= text_field_tag :user_name, "", placeholder: "Twitter", class: "form-control" %>
       </div>
-      <%= submit_tag 'Search', class: "btn btn-default" %>
-    <% end -%>
+      <%= submit_tag 'Go', class: "btn btn-default" %>
+    <% end %>
 
     <ul class="nav navbar-nav navbar-right">
       <% if current_user != nil %>
