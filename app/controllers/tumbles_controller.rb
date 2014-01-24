@@ -10,5 +10,7 @@ class TumblesController < ApplicationController
 
     client = Tumblr::Client.new
     @tumbles = client.posts(params[:search])
+    @title = client.posts(params[:search])["blog"]["title"]
+    @url = client.posts(params[:search])["blog"]["title"]
   end
 end
