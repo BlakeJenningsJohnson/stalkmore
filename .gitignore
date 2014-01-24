@@ -16,8 +16,5 @@
 /tmp
 
 # Ignore application configuration
-/config/application.yml
-<<<<<<< HEAD
+config/application.yml
 
-=======
->>>>>>> 874148b097902b371a649e86bf369f3d40acab8d
