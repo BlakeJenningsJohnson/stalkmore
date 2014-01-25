@@ -1,10 +1,3 @@
 class Feed < ActiveRecord::Base
-
-  # def new
-  # end
-
-  # def create
-  #   @feed = Feed.create()
-  # end
-
+  has_many :users, through: :subscriptions
 end
