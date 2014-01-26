@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140125004253) do
     t.datetime "updated_at"
     t.string   "uid"
     t.string   "type"
+    t.string   "rss_url"
   end
 
   create_table "users", force: true do |t|

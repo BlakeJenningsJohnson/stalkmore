@@ -15,15 +15,7 @@ class SessionsController < ApplicationController
     redirect_to "/", notice: "You have been successfully signed out."
   end
 
-  def greeting
-    if current_user
-      current_user.username
-    else
-      "Potential Stalker"
-    end
-  end
-
-  helper_method :greeting
+  
 
   protected
 

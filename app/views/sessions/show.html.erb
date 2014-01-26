@@ -1,2 +1,12 @@
 <h1>Hi, <%= greeting %>!</h1>
 
+<% if !@new_feed.nil? && @new_feed.errors.any? %>
+<div class= "alert alert-danger">
+  <ul>
+    <% @new_feed.errors.each do | attr, msg | %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+

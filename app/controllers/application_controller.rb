@@ -8,4 +8,17 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
+
+  # Moved greeting here so that all controllers have access for validations.
+  
+  def greeting
+    if current_user
+      current_user.username
+    else
+      "Potential Stalker"
+    end
+  end
+
+  helper_method :greeting
+
 end
