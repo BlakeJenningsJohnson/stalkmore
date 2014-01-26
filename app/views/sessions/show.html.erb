@@ -10,3 +10,25 @@
 </div>
 <% end %>
 
+<% if @posts.any? %>
+<ul class= "media-list">
+<% @posts.order(post_date: :desc).each do | post | %>
+  <li class= "media">
+    <a class="pull-left" href="#">
+      <img class="media-object" data-src="holder.js/64x64">
+    </a>
+    <div class="media-body">
+      <h4 class="media-heading"><%= link_to post.title, post.url %></h4>
+      <h5><%= if post.author.nil? then "Unknown Author" else post.author end %>, <%= post.post_date.to_formatted_s(:long_ordinal) %></h5>
+      <p>
+        <%= strip_tags(post.message) %>
+      </p>
+    </div>
+  </li>
+<% end %>
+</ul>
+<% else %>
+<div class="alert alert-info">
+ Search for users to grow your feed!
+</div>
+<% end %>

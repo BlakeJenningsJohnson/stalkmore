@@ -8,9 +8,9 @@ class RssController < ApplicationController
     @new_feed = Rssfeed.new
     @new_feed.uid = current_user
     @new_feed.rss_url = params[:rss_url]
-    @new_feed.save
 
     if @new_feed.save
+      @new_feed.update_posts
       redirect_to :root
     else
       render "sessions/show"

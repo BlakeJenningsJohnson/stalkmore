@@ -4,7 +4,8 @@
   <title>Stalkmore</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.2.0/holder.js"></script>
+  <%= csrf_meta_tags %> 
 </head>
 
 <header>
@@ -77,10 +78,11 @@
 </nav>
 </header>
 
-<%= notice %>
 <body>
+<div style= "padding: 20px">
 
+<%= notice %>
 <%= yield %>
-
+</div>
 </body>
 </html>

@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  before_action :get_posts
 
   def current_user
     current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -9,8 +10,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
-  # Moved greeting here so that all controllers have access for validations.
-  
+  # Moved greeting from sessions to here so that all controllers have access for validations.
+
   def greeting
     if current_user
       current_user.username
@@ -21,4 +22,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :greeting
 
+  def get_posts
+    @posts = Post.all 
+  end
 end

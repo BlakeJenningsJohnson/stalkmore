@@ -8,9 +8,23 @@ class Rssfeed < Feed
     end
   end
 
-  def get_posts
-    Feedzirra::Feed.fetch_and_parse(self.rss_url)
+  def update_posts
+    feed = Feedzirra::Feed.fetch_and_parse(self.rss_url)
+    feed.sanitize_entries!
+    feed.entries.each do | entry |
+      if Post.where("title = ? AND post_date = ?", entry.title, entry.published).count == 0
 
+        Post.create!(
+          # :uid 
+          # :type  
+          :title     => entry.title,
+          :author    => entry.author, 
+          :post_date => entry.published,
+          :message   => entry.summary,
+          :url       => entry.url
+          )
+      end
+    end
   end
 
 end
