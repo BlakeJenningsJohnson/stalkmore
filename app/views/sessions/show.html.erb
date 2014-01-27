@@ -1,8 +1,8 @@
 <h1>Hi, <%= greeting %>!</h1>
 
 <ul>
-  <% @all_tweets.flatten.each do |tweet| %>
-  <li><%= tweet.user.username %></li>
-  <li><%= tweet.text %></li>
+  <% @all_the_posts.flatten.each do |post| %>
+  <li><%= post %><%#= tweet.user.username %></li>
+  <!-- <li><%#= tweet.text %></li> -->
   <% end %>
 </ul>

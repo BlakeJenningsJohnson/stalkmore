@@ -13,4 +13,14 @@ class TumblrFeed < Feed
     end
     client = Tumblr::Client.new
   end
+
+  def api_posts
+    TumblrFeed.client.posts(self.uid)
+  end
+
+  # def save_posts  #consider making validations
+  #   posts.each do |post|
+  #     Post.create!(#pass in all the stuff from the table you haven't made yet)
+  #   end
+  # end
 end

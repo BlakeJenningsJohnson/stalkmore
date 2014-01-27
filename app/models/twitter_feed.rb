@@ -13,7 +13,7 @@ class TwitterFeed < Feed
     end
   end
 
-  def posts
+  def api_posts
     TwitterFeed.client.user_timeline(self.uid.to_i)
   end
 end
