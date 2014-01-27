@@ -1,0 +1,36 @@
+
+
+div#home-container {
+  
+}
+
+body {
+ padding-top: 70px; 
+ background-image: image-url('background.jpg');
+}
+
+div#content-wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+div#logo {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 60px;
+  border: 2px #333 solid;
+}
+
+iframe#video {
+  margin: 80px;
+  text-align: center;
+}
+
+div#center {
+  text-align: center;
+}
+
+#twitter-search {
+  list-style-type: none;
+  margin: 20px auto;
+  
+}
