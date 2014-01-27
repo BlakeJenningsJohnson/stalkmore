@@ -4,6 +4,9 @@ class SessionsController < ApplicationController
   def show
     if current_user
       @feeds = current_user.feeds
+      @all_tweets = @feeds.map do |feed|
+        feed.posts
+      end
     else 
       redirect_to sign_in_path
     end

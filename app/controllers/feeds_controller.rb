@@ -3,13 +3,6 @@ class FeedsController < ApplicationController
   def new
   end
 
-  # def tweet_show
-  #   @all_tweets = @feeds.each do |feed|
-  #     raise
-  #     puts feed.user_timeline.inspect
-  #   end
-  # end
-
   def create
     @feed = Feed.find_or_create_by(uid: params["uid"], type: "TwitterFeed") # 
     @subscription = Subscription.new(user_id: current_user.id, feed_id: @feed.id)

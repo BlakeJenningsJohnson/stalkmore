@@ -1,8 +1,8 @@
 <h1>Hi, <%= greeting %>!</h1>
 
-<%#= @feeds.inspect %>
-
-<% @feeds.each do |feed| %>
-<%# raise %>
-<%= feed.posts %>
-<% end %>
+<ul>
+  <% @all_tweets.flatten.each do |tweet| %>
+  <li><%= tweet.user.username %></li>
+  <li><%= tweet.text %></li>
+  <% end %>
+</ul>
