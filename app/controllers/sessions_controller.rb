@@ -2,6 +2,17 @@ class SessionsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def show
+    if current_user
+      @feeds = current_user.feeds
+      @all_the_posts = @feeds.map do |feed|
+        feed.api_posts
+      end
+    else 
+      redirect_to sign_in_path
+    end
+  end
+
+  def index
   end
 
   def create
