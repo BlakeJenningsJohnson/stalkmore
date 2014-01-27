@@ -1,3 +1,8 @@
 <h1>Hi, <%= greeting %>!</h1>
 
-<%= @feeds %>
+<%#= @feeds.inspect %>
+
+<% @feeds.each do |feed| %>
+<%# raise %>
+<%= feed.posts %>
+<% end %>
