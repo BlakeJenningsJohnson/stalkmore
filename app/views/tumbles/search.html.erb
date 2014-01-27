@@ -1,5 +1,13 @@
 ALL THE SEARCHES<br><br>
 
 <strong><%= @title %></strong><br>
+<ul>
+<%=link_to feed_path(@tumbles["blog"]["name"], type: "TumblrFeed"), method: :post do %>
+      <li>
+        <img src="<%= @tumbles["blog"]["name"] %>"/> 
+        <!-- <span class = "username"> --><%#= "@" + twitter_user.username %><!-- </span> -->
+      </li>
+    <% end %>
+</ul>
 <%= link_to "View #{@title} on Tumblr!", "#{@url}" %>
 
