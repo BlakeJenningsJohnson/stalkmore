@@ -1,8 +1,15 @@
 <h1>Hi, <%= greeting %>!</h1>
+  <% if current_user.posts %>
+    <% @all_the_posts.flatten.each do |post| %>
+    <br>
+    <li><%= post.content.html_safe if post.content %><%#= tweet.user.username %></li>
+    <li><%= post.author %><br>
+    <%= post.post_date %></li><br>
+    <!-- <li><%#= tweet.text %></li> -->
+    <% end %>
+    <% else %>
+  <h1>Yo</h1>
 
-<ul>
-  <% @all_the_posts.flatten.each do |post| %>
-  <li><%= post %><%#= tweet.user.username %></li>
-  <!-- <li><%#= tweet.text %></li> -->
-  <% end %>
-</ul>
+    <% end %>
+
+
