@@ -12,10 +12,10 @@
 <%# end %><!--  Moved to search.html.erb -->
 
 
-<% if @all_the_posts.any? %>
+<% if @posts.any? %>
 <div class="media-body">
   <h4 class="media-heading">
-      <% @all_the_posts.flatten.each do | post | %>
+      <% @posts.flatten.each do | post | %>
       <%= link_to post.title, post.url %></h4> -->
         <ul class= "media-list">
           <li class= "media">
@@ -24,7 +24,7 @@
             </a>
         <%= post.content.html_safe %>
         <%= if post.author.nil? then "Unknown Author" else post.author end %>
-        <%= post.published %>
+        <%#= post.published %>
 
   
     
@@ -47,22 +47,22 @@
 <ul>
 
  <%# @all_the_posts.flatten.each do |post| %>
-  <li><%#= post %><%#= tweet.user.username %></li>
+  <!-- <li> --><%#= post %><%#= tweet.user.username %><!-- li> -->
   <!-- <li><%#= tweet.text %></li> -->
   <%# end %>
-</ul> 
-
-  <% if current_user.posts %>
-    <% @all_the_posts.flatten.each do |post| %>
+<!-- </ul>  -->
+<!-- 
+  <%# if current_user.posts %>
+    <%# @all_the_posts.flatten.each do |post| %>
     <br>
-    <li><%= post.content.html_safe if post.content %><%#= tweet.user.username %></li>
-    <li><%= post.author %><br>
-    <%= post.post_date %></li><br>
-    <!-- <li><%#= tweet.text %></li> -->
-    <% end %>
-    <% else %>
-  <h1>Yo</h1>
+    <li><%#= post.content.html_safe if post.content %><%#= tweet.user.username %></li>
+    <li><%#= post.author %><br>
+    <%#= post.post_date %></li><br>
+    <!<li><%#= tweet.text %></li> -->
+    <%# end %>
+    <%# else %>
+ <!--  <h1>Yo</h1> -->
 
-    <% end %>
+    <%# end %>
 
 

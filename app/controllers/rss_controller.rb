@@ -11,8 +11,8 @@ class RssController < ApplicationController
   def create
     @new_feed = Rssfeed.create(uid: params[:uid], type: params[:type])  # type isn't needed because when feed is saved, type is automatically included.
   
-    if @new_feed.save
-      @new_feed.save_posts
+    if @new_feed.save_posts
+    
       # subscription.create!(feed_id: @new_feed.id, user_id: current_user.id)
       redirect_to :root
     else
