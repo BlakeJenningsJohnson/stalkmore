@@ -12,4 +12,5 @@ class FeedsController < ApplicationController
       redirect_to "/", notice: "There was a problem adding this user."
     end
   end
+
 end

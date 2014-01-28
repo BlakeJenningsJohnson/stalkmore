@@ -2,7 +2,7 @@
 
 <ul>
   <% @all_the_posts.flatten.each do |post| %>
-  <li><%= post %><%#= tweet.user.username %></li>
+  <li><%= post.content %><%#= tweet.user.username %></li>
   <!-- <li><%#= tweet.text %></li> -->
   <% end %>
 </ul>
