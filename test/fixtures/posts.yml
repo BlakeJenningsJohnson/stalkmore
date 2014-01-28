@@ -1,19 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  uid: MyString
-  type: 
-  title: MyString
-  author: MyString
-  post_date: 2014-01-25 20:51:29
-  message: MyText
-  url: MyString
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+#  column: value
 
-two:
-  uid: MyString
-  type: 
-  title: MyString
-  author: MyString
-  post_date: 2014-01-25 20:51:29
-  message: MyText
-  url: MyString

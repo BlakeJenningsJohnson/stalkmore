@@ -1,5 +1,6 @@
 <h1>Hi, <%= greeting %>!</h1>
 
+
 <% if !@new_feed.nil? && @new_feed.errors.any? %>
 <div class= "alert alert-danger">
   <ul>
@@ -32,3 +33,11 @@
  Search for users to grow your feed!
 </div>
 <% end %>
+
+<ul>
+  <% @all_the_posts.flatten.each do |post| %>
+  <li><%= post %><%#= tweet.user.username %></li>
+  <!-- <li><%#= tweet.text %></li> -->
+  <% end %>
+</ul>
+

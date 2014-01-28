@@ -1,5 +1,12 @@
-<% @users.each do |u| %>
+<% @users.each do |twitter_user| %>
   <ul>
-    <li><img src="<%= u.profile_image_url %>"/> <span class = "username"><%= "@" + u.username %></span></li>
+    <%=link_to feed_path(twitter_user.id, type: "TwitterFeed"), method: :post do %>
+      <li>
+        <img src="<%= twitter_user.profile_image_url %>"/> 
+        <span class = "username"><%= "@" + twitter_user.username %></span>
+      </li>
+    <% end %>
   </ul>
 <% end %>
+
+<%#= @feed %>
