@@ -1,28 +1,38 @@
 <h1>Hi, <%= greeting %>!</h1>
 
 
-<% if !@new_feed.nil? && @new_feed.errors.any? %>
-<div class= "alert alert-danger">
-  <ul>
-    <% @new_feed.errors.each do | attr, msg | %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
+<%# if !@new_feed.nil? && @new_feed.errors.any? %>
+<!-- <div class= "alert alert-danger"> -->
+  <!-- <ul> -->
+    <%# @new_feed.errors.each do | attr, msg | %>
+    <!-- <li><%#= msg %></li> -->
+    <%# end %>
+  <!-- </ul> -->
+<!-- </div> -->
+<%# end %><!--  Moved to search.html.erb -->
 
-<% if @posts.any? %>
-<ul class= "media-list">
-<% @posts.order(post_date: :desc).each do | post | %>
-  <li class= "media">
-    <a class="pull-left" href="#">
-      <img class="media-object" data-src="holder.js/64x64">
-    </a>
-    <div class="media-body">
-      <h4 class="media-heading"><%= link_to post.title, post.url %></h4>
-      <h5><%= if post.author.nil? then "Unknown Author" else post.author end %>, <%= post.post_date.to_formatted_s(:long_ordinal) %></h5>
+
+<% if @all_the_posts.any? %>
+<div class="media-body">
+  <h4 class="media-heading">
+      <% @all_the_posts.flatten.each do | post | %>
+      <%= link_to post.title, post.url %></h4> -->
+        <ul class= "media-list">
+          <li class= "media">
+            <a class="pull-left" href="#">
+              <img class="media-object" data-src="holder.js/64x64">
+            </a>
+        <%= post.content.html_safe %>
+        <%= if post.author.nil? then "Unknown Author" else post.author end %>
+        <%= post.published %>
+
+  
+    
+    
+        
+      <h5><%#= , <%#= post.post_date.to_formatted_s(:long_ordinal) %></h5>
       <p>
-        <%= strip_tags(post.message) %>
+        <%#= strip_tags(post.message) %>
       </p>
     </div>
   </li>
@@ -35,9 +45,9 @@
 <% end %>
 
 <ul>
-  <% @all_the_posts.flatten.each do |post| %>
-  <li><%= post %><%#= tweet.user.username %></li>
+ <%# @all_the_posts.flatten.each do |post| %>
+  <li><%#= post %><%#= tweet.user.username %></li>
   <!-- <li><%#= tweet.text %></li> -->
-  <% end %>
-</ul>
+  <%# end %>
+</ul> --> -->
 
