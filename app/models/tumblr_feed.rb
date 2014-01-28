@@ -29,8 +29,8 @@ class TumblrFeed < Feed
           tumble.content = tu_post["body"]
           tumble.title   = tu_post["title"]
       elsif tu_post["type"] == "photo" 
-          tumble.content = tu_post["photos"].map {|photo| "<img src=#{photo["alt_sizes"][1]["url"]}>"}.join
-          tumble.title   = tu_post["caption"]
+          tumble.content = tu_post["photos"].map {|photo| "<img src=#{photo["alt_sizes"][0]["url"]}>"}.join
+          tumble.title   = tu_post["source_title"]
       elsif tu_post["type"] == "quote"
           tumble.content = tu_post["source"]
           tumble.title   = tu_post["text"]
