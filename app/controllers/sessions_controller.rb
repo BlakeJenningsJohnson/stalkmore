@@ -4,9 +4,7 @@ class SessionsController < ApplicationController
   def show
     if current_user
       @feeds = current_user.feeds
-      @all_the_posts = current_user.posts.each do |post|
-        post
-      end
+      @all_the_posts = current_user.posts.order('post_date DESC')
     else 
       redirect_to sign_in_path
     end

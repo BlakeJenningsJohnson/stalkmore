@@ -5,6 +5,8 @@
     <% @all_the_posts.flatten.each do |post| %>
     <br>
     <li><%= post.content.html_safe if post.content %><%#= tweet.user.username %></li>
+    <li><%= post.author %><br>
+    <%= post.post_date %></li><br>
     <!-- <li><%#= tweet.text %></li> -->
     <% end %>
     <% else %>
@@ -12,4 +14,3 @@
 
     <% end %>
 
-</ul>
