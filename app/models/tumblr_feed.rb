@@ -18,9 +18,52 @@ class TumblrFeed < Feed
     TumblrFeed.client.posts(self.uid)
   end
 
-  # def save_posts  #consider making validations
-  #   posts.each do |post|
-  #     Post.create!(#pass in all the stuff from the table you haven't made yet)
+  def save_posts  #consider making validations
+    temp_post_hash = api_posts["posts"]
+    temp_post_hash.each do |tu_post|
+      tumble = Post.new(  feed_id:    id, 
+                          author:     tu_post["blog_name"], 
+                          post_date:  tu_post["date"], 
+                          url:        tu_post["post_url"])
+      if    tu_post["type"] == "text"
+          tumble.content = tu_post["body"]
+          tumble.title   = tu_post["title"]
+      elsif tu_post["type"] == "photo" 
+          tumble.content = tu_post["photos"].map {|photo| "<img src=#{photo["alt_sizes"][0]["url"]}>"}.join
+          tumble.title   = tu_post["source_title"]
+      elsif tu_post["type"] == "quote"
+          tumble.content = tu_post["source"]
+          tumble.title   = tu_post["text"]
+      elsif tu_post["type"] == "audio"
+          tumble.content = tu_post["embed"]
+          tumble.title   = "track_name"
+      end
+      tumble.save!
+    end
+  end
+end
+
+
+  #   posts.each do |tu_feed|
+        #tu_feed["posts"]
+  #     Post.create!(feed_id: id, #pass in all the stuff from the table you haven't made yet)
   #   end
   # end
-end
+
+
+# +  def save_posts #consider making validations
+#  +    client.user_timeline(self.uid.to_i).each do |tweet|
+#  +      Post.create!(feed_id: id, content: tweet.text, author: tweet.user.name, post_date: tweet.created_at, content_type: "tweet" )
+#  +    end  
+#  +  end
+#   create_table "posts", force: true do |t|
+#    t.datetime "created_at"
+#    t.datetime "updated_at"
+#    t.string   "content_type"
+#    t.string   "title"
+#    t.string   "author"
+#    t.datetime "post_date"
+#    t.text     "content"
+#    t.string   "url"
+#    t.integer  "feed_id"
+#  end
