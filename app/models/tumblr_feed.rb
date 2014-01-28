@@ -20,18 +20,25 @@ class TumblrFeed < Feed
 
   def save_posts  #consider making validations
     temp_post_hash = api_posts["posts"]
-    temp_post_.each do |tu_post|
-      @tumble = Post.new( feed_id:    id, 
+    temp_post_hash.each do |tu_post|
+      tumble = Post.new(  feed_id:    id, 
                           author:     tu_post["blog_name"], 
                           post_date:  tu_post["date"], 
                           url:        tu_post["post_url"])
-      if post["type"] == "text"
+      if    tu_post["type"] == "text"
           tumble.content = tu_post["body"]
           tumble.title   = tu_post["title"]
-      # elsif post["type"] == "photo" this needs all the logic of a photo. bah
-      else
-        tu_post
+      elsif tu_post["type"] == "photo" 
+          tumble.content = tu_post["photos"].map {|photo| "<img src=#{photo["alt_sizes"][1]["url"]}>"}.join
+          tumble.title   = tu_post["caption"]
+      elsif tu_post["type"] == "quote"
+          tumble.content = tu_post["source"]
+          tumble.title   = tu_post["text"]
+      elsif tu_post["type"] == "audio"
+          tumble.content = tu_post["embed"]
+          tumble.title   = "track_name"
       end
+      tumble.save!
     end
   end
 end
