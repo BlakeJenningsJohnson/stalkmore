@@ -59,7 +59,7 @@
     <!-- end search form for twitter -->
 
     <!-- start search form for rss -->
-     <%= form_tag('/rss/create', method: :get, class: "navbar-form navbar-left", role: "search") do %>
+     <%= form_tag('/rss/search', method: :get, class: "navbar-form navbar-left", role: "search") do %>
       <div class="form-group">
         <%= text_field_tag :rss_url, "", placeholder: "Add a Feed", class: "form-control" %>
       </div>

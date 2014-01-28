@@ -1,0 +1,8 @@
+<h3>Search Results</h3>
+
+
+<%= @rss_feed.title  %>
+
+# add an add button if you want to subscribe (this connects the subscription join table) - will have route that goes to rss controller that goes to create action; uses hidden field that passes params (pass :uid and :type) -name of uid and value of params from that search
+# adding saves it to the subscription (and links it to the signed in user;) 
+#perhaps more info with title (etag?  check methods available to feedzilla feed)

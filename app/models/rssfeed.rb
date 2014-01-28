@@ -7,6 +7,14 @@ class Rssfeed < Feed
       errors.add(:rss_url, "Invalid feed URL. Please try again.")
     end
   end
+  
+
+  def api_posts
+    Feedzirra::Feed.fetch_and_parse(self.uid).entries
+  end
+
+
+
 
   def update_posts
     feed = Feedzirra::Feed.fetch_and_parse(self.rss_url)
