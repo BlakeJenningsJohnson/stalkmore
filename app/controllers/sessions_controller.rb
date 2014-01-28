@@ -3,13 +3,9 @@ class SessionsController < ApplicationController
 
 
   def show
-    if current_user && current_user.feeds
+    if current_user 
       @feeds = current_user.feeds
-      @all_the_posts = @feeds.map do |feed|
-        feed.api_posts
-      end
-      @all_the_posts
-
+      @all_the_posts = current_user.posts.order('post_date DESC')
     else 
       redirect_to sign_in_path
     end

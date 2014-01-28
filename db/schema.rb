@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140126045129) do
+ActiveRecord::Schema.define(version: 20140128204542) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,19 +22,18 @@ ActiveRecord::Schema.define(version: 20140126045129) do
     t.datetime "updated_at"
     t.string   "uid"
     t.string   "type"
-    t.string   "rss_url"
   end
 
   create_table "posts", force: true do |t|
-    t.string   "uid"
-    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "content_type"
     t.string   "title"
     t.string   "author"
     t.datetime "post_date"
-    t.text     "message"
     t.string   "url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "feed_id"
+    t.text     "content"
   end
 
   create_table "subscriptions", force: true do |t|
