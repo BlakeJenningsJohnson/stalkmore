@@ -1,7 +1,7 @@
 Stalkmore::Application.routes.draw do
 
   root to: "sessions#show"
-  post "/feeds/:uid", to: "feeds#create", as: :feed
+  post "/feeds", to: "feeds#create", as: :feed
   get "/search/tumbles", to: "tumbles#search", as: :tumbles
   get "users/sign_in", to: redirect("/auth/developer"), as: :sign_in
   get "/users/sign_out", to: "sessions#sign_out", as: :sign_out
@@ -12,6 +12,13 @@ Stalkmore::Application.routes.draw do
 
   #twitter search feature
   get "/twitter/search", to: "twitter#search"
+
+  # rss search
+  get "rss/search", to: "rss#search"
+
+
+ post "rss/create", to: "rss#create"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

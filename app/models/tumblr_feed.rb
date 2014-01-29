@@ -55,4 +55,3 @@ class TumblrFeed < Feed
     end
   end
 end
-

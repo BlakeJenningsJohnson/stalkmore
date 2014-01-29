@@ -3,7 +3,6 @@ class TwitterController < ApplicationController
   def index
   end
 
-
   def search
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
