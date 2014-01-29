@@ -14,7 +14,7 @@
           <li><%= post.content.html_safe if post.content %></li>
         </div>
         <div id= "date">
-          <li><%= post.post_date if post.post_date %></li><br>
+          <li><%= post.post_date.strftime("Posted on %B %e, %l:%M %p") if post.post_date %></li><br>
         </div>
       </div>
       <% end %>
