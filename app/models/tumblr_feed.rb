@@ -21,6 +21,7 @@ class TumblrFeed < Feed
   def save_posts  #consider making validations
     temp_post_hash = api_posts["posts"]
     temp_post_hash.each do |tu_post|
+      next if Post.find_by_url(tu_post["post_url"])
       tumble = Post.new(  feed_id:    id, 
                           author:     tu_post["blog_name"], 
                           post_date:  tu_post["date"], 
@@ -29,7 +30,7 @@ class TumblrFeed < Feed
           tumble.content = tu_post["body"]
           tumble.title   = tu_post["title"]
       elsif tu_post["type"] == "photo" 
-          tumble.content = tu_post["photos"].map {|photo| "<img src=#{photo["alt_sizes"][0]["url"]}>"}.join
+          tumble.content = tu_post["photos"].map {|photo| "<img src=#{photo["alt_sizes"][1]["url"]}>"}.join
           tumble.title   = tu_post["source_title"]
       elsif tu_post["type"] == "quote"
           tumble.content = tu_post["source"]
@@ -38,7 +39,7 @@ class TumblrFeed < Feed
           tumble.content = tu_post["embed"]
           tumble.title   = "track_name"
       end
-      tumble.save!
+      tumble.save
     end
   end
 end
