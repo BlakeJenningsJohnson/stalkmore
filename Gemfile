@@ -51,6 +51,8 @@ gem 'figaro'
 
 gem 'twitter'
 
+gem 'feedzirra'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
