@@ -1,13 +1,12 @@
 ALL THE SEARCHES<br><br>
 
-<strong><%= @title %></strong><br>
+
 <ul>
-<%=link_to feed_path(@tumbles["blog"]["name"], type: "TumblrFeed"), method: :post do %>
+<%=link_to feed_path(uid: @tumbles["blog"]["name"], type: "TumblrFeed"), method: :post do %>
       <li>
-        <img src="<%= @tumbles["blog"]["name"] %>"/> 
+        <img src="<%= "http://api.tumblr.com/v2/blog/#{@tumbles["blog"]["name"]}.tumblr.com/avatar/512" %>"/> 
         <!-- <span class = "username"> --><%#= "@" + twitter_user.username %><!-- </span> -->
       </li>
     <% end %>
 </ul>
 <%= link_to "View #{@title} on Tumblr!", "#{@url}" %>
-

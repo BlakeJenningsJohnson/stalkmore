@@ -1,47 +1,55 @@
+<div class="container">
 <h1>Hi, <%= greeting %>!</h1>
 
-<% if @posts.any? %>
-<% @posts.flatten.each do | post | %>
-  <% if get_post_type(post) == "RssFeed" %>
+<!-- <%# if @posts.any? %>
+<%# @posts.flatten.each do | post | %>
+  <%# if get_post_type(post) == "RssFeed" %>
     <div class="media-body">
-      <h4 class="media-heading"><%= link_to post.title, post.url %></h4>
+      <h4 class="media-heading"><%#= link_to post.title, post.url %></h4>
       <ul class= "media-list">
         <li class= "media">
           <a class="pull-left" href="#">
             <img class="media-object" data-src="holder.js/64x64">
           </a>
-          <h5><%= if post.author.nil? then "Unknown Author" else post.author end %>
-          | <%= post.post_date.to_formatted_s(:long_ordinal) %></h5>
-          <p><%= strip_tags(post.content.html_safe) %></p>
+          <h5><%#= if post.author.nil? then "Unknown Author" else post.author end %>
+          | <%#= post.post_date.to_formatted_s(:long_ordinal) %></h5>
+          <p><%#= strip_tags(post.content.html_safe) %></p>
         </li>
       </ul>    
     </div>
   <%# elsif get_post_type(post) == "Twitter" %>
     
-  <% end %>
-<% end %>
+  <%# end %>
+<%# end %> -->
 
-<% else %>
-<div class="alert alert-info">
+<%# else %>
+<!-- <div class="alert alert-info">
  Search for users to grow your feed!
 </div>
-<% end %>
 
-------------------------
+<%# end %>
+
 
 
 
   <% if current_user.posts %>
-    <% @all_the_posts.flatten.each do |post| %>
-    <br>
-    <li><%= post.content.html_safe if post.content %><%#= tweet.user.username %></li>
-    <li><%= post.author %><br>
-    <%= post.post_date %></li><br>
-    <li><%#= tweet.text %></li>
-    <% end %>
-    <% else %>
-<h1>Yo</h1> -->
-
-    <% end %>
-
+      <% @all_the_posts.flatten.each do |post| %>
+      <div class="<%= post.content_type %>">
+        <hr>
+        <div id= "author">
+          <li><%= post.author.html_safe if post.author %> : </li>
+        </div>
+        <h1><li><%= post.title.html_safe if post.title %></li></h1>
+        <div id= "content" >
+          <li><%= post.content.html_safe if post.content %></li>
+        </div>
+        <div id= "date">
+          <li><%= post.post_date.strftime("Posted on %B %e, %l:%M %p") if post.post_date %></li><br>
+        </div>
+      </div>
+      <% end %>
+  <% else %>
+      <h1>Search for new people to stalk!</h1>
+  <% end %>
+</div>
 

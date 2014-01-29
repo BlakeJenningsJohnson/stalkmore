@@ -13,9 +13,8 @@ class RssFeed < Feed
   end
 
   def save_posts
-    feed = Feedzirra::Feed.fetch_and_parse(self.uid)
-    feed.sanitize_entries!
-    feed.entries.each do | entry |
+  
+    api_posts.each do | entry |
       if Post.where("title = ? AND post_date = ?", entry.title, entry.published).count == 0
 
         Post.create!( 
@@ -24,8 +23,8 @@ class RssFeed < Feed
           :post_date => entry.published,
           :content   => entry.summary,
           :url       => entry.url,
-          :feed_id   => self.id # where self is this specific RssFeed
-          # :content_type => "rss"
+          :feed_id   => self.id, # where self is this specific RssFeed
+          :content_type => "rss"
           )
       end
     end

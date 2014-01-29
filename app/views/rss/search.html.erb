@@ -1,18 +1,17 @@
 <h3>Search Results</h3>
 
 <% if @rss_feed.class == Fixnum %> 
-<div class= "alert alert-danger">
-  Invalid feed URL. Please try again.
-</div>
+  <div class= "alert alert-danger">
+    Invalid RSS URL feed. Please try again.
+    <!-- Invalid feed URL. Please try again. -->
+  </div>
 <% else %>
-
-<%= form_tag feed_path do %>
-
-<%= @rss_feed.title  %>
-<%= hidden_field_tag :uid, @rss_feed.feed_url %>
-<%= hidden_field_tag :type, "RssFeed" %>
-<%= submit_tag 'Add to Feed', class: "btn btn-primary btn-sm" %>
-<% end %>
+  <%= form_tag feed_path(uid: params[:uid], type: "RssFeed") do %>
+    <%= @rss_feed.title  %>
+    <%= hidden_field_tag :uid, @rss_feed.feed_url %>
+    <%= hidden_field_tag :type, "RssFeed" %>
+    <%= submit_tag 'Add to Feed', class: "btn btn-primary btn-sm" %>
+  <% end %>
 <% end %>
 
 
