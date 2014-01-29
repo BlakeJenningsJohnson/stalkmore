@@ -9,6 +9,16 @@ class User < ActiveRecord::Base
   end
 
 
+  def self.create_with_omniauth(auth_hash)
+    create! do |user|
+      user.provider = auth["provider"]
+      user.uid = auth["uid"]
+      user.name = auth["info"]["nickname"]
+      user.avatar = auth["info"]["image"]
+    end
+  end
+end
+
   def self.create_from_omniauth(auth_hash)
     self.create!(
       uid:        auth_hash["uid"],

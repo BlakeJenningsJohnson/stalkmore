@@ -58,9 +58,9 @@
     <!-- end search form for twitter -->
     <ul class="nav navbar-nav navbar-right">
       <% if current_user != nil %>
-      <li><%= link_to "Sign Out", sign_out_path %></li>
+      <li><%= link_to "Sign Out", sign_out_path[:provider] %></li>
       <% else %>
-      <li><%= link_to "Sign In/Up", sign_in_path %></li>
+      <li><%= link_to "Sign In/Up", sign_in_path[:provider] %></li>
       <% end %>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
