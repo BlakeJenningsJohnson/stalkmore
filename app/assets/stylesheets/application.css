@@ -26,7 +26,7 @@ body {
  padding-top: 70px; 
 }
 
-.nav navbar-nav navbar-right {
+.nav.navbar-nav.navbar-right li a {
   padding-right: 50px;
 }
 
@@ -35,5 +35,19 @@ ul li {
 }
 
 hr {
-  background-color: red;
+  color: red;
 }
+
+#date {
+  color: purple;
+}
+
+#author {
+  size: 15px;
+  color: green;
+  font-style: italic;
+  font-weight: bold;
+}
+
+
+

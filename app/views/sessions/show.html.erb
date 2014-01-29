@@ -1,16 +1,24 @@
+<div class="container">
 <h1>Hi, <%= greeting %>!</h1>
 
 <ul>
   <% if current_user.posts %>
-    <% @all_the_posts.flatten.each do |post| %>
-    <br><hr>
-    <li><%= post.title.html_safe if post.title %></li><br>
-    <li><%= post.content.html_safe if post.content %></li>
-    <li><%= post.author.html_safe if post.author %></li><br>
-    <li><%= post.post_date if post.post_date %></li><br>
-    <% end %>
-    <% else %>
-  <h1>Yo</h1>
-
-    <% end %>
-
+      <% @all_the_posts.flatten.each do |post| %>
+      <div class="<%= post.content_type %>">
+        <hr>
+        <div id= "author">
+          <li><%= post.author.html_safe if post.author %> : </li>
+        </div>
+        <h1><li><%= post.title.html_safe if post.title %></li></h1>
+        <div id= "content" >
+          <li><%= post.content.html_safe if post.content %></li>
+        </div>
+        <div id= "date">
+          <li><%= post.post_date if post.post_date %></li><br>
+        </div>
+      </div>
+      <% end %>
+  <% else %>
+      <h1>Search for new people to stalk!</h1>
+  <% end %>
+</div>
