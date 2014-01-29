@@ -26,15 +26,12 @@ body {
  padding-top: 70px; 
 }
 
-.nav.navbar-nav.navbar-right li a {
-  padding-right: 50px;
-}
-
 ul li {
   list-style: none;
 }
 
 hr {
+  margin-top: 2px;
   color: red;
 }
 
@@ -49,5 +46,13 @@ hr {
   font-weight: bold;
 }
 
+.tweet {
+  padding-left: 30px;
+  background-color: #F7F5BA;
+}
 
+.tumble {
+  padding-left: 30px;
+  background-color: #E0E0D7;
+}
 
