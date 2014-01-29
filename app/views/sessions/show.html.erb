@@ -3,11 +3,11 @@
 <ul>
   <% if current_user.posts %>
     <% @all_the_posts.flatten.each do |post| %>
-    <br>
-    <li><%= post.content.html_safe if post.content %><%#= tweet.user.username %></li>
-    <li><%= post.author %><br>
-    <%= post.post_date %></li><br>
-    <!-- <li><%#= tweet.text %></li> -->
+    <br><hr>
+    <li><%= post.title.html_safe if post.title %></li><br>
+    <li><%= post.content.html_safe if post.content %></li>
+    <li><%= post.author.html_safe if post.author %></li><br>
+    <li><%= post.post_date if post.post_date %></li><br>
     <% end %>
     <% else %>
   <h1>Yo</h1>

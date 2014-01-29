@@ -26,4 +26,14 @@ body {
  padding-top: 70px; 
 }
 
+.nav navbar-nav navbar-right {
+  padding-right: 50px;
+}
 
+ul li {
+  list-style: none;
+}
+
+hr {
+  background-color: red;
+}
