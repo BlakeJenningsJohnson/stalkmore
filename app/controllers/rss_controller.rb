@@ -5,7 +5,7 @@ class RssController < ApplicationController
   end
 
   def search
-    @rss_feed = Feedzirra::Feed.fetch_and_parse(params[:uid])
+    @rss_feed = Feedzirra::Feed.fetch_and_parse(params[:uid].strip)
   end
 
 end
