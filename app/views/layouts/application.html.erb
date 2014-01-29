@@ -4,7 +4,8 @@
   <title>Stalkmore</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.2.0/holder.js"></script>
+  <%= csrf_meta_tags %> 
 </head>
 
 <header>
@@ -34,6 +35,7 @@
       <%= submit_tag "Go", class: "btn btn-default" %>
     <% end %> 
     <!-- end search form for tumbles -->
+
     <!-- start twitter search -->
     <%= form_tag('/twitter/search', method: :get, class: "navbar-form navbar-left", role: "search") do %>
       <div class="form-group">
@@ -42,6 +44,16 @@
       <%= submit_tag 'Go', class: "btn btn-default" %>
     <% end %>
     <!-- end search form for twitter -->
+
+    <!-- start search form for rss -->
+     <%= form_tag('/rss/search', method: :get, class: "navbar-form navbar-left", role: "search") do %>
+      <div class="form-group">
+        <%= text_field_tag :uid, "", placeholder: "Add a Feed", class: "form-control" %>
+      </div>
+      <%= submit_tag 'Go', class: "btn btn-default" %>
+    <% end %>
+    <!-- end search form for rss -->
+
     <ul class="nav navbar-nav navbar-right">
       <% if current_user != nil %>
       <li><%= link_to "Sign Out", sign_out_path %></li>
@@ -53,10 +65,11 @@
 </nav>
 </header>
 
-<%= notice %>
 <body>
+<div style= "padding: 20px">
 
+<%= notice %>
 <%= yield %>
-
+</div>
 </body>
 </html>
