@@ -6,7 +6,7 @@
     <!-- Invalid feed URL. Please try again. -->
   </div>
 <% else %>
-  <%= form_tag feed_path do %>
+  <%= form_tag feed_path(uid: params[:uid], type: "RssFeed") do %>
     <%= @rss_feed.title  %>
     <%= hidden_field_tag :uid, @rss_feed.feed_url %>
     <%= hidden_field_tag :type, "RssFeed" %>
