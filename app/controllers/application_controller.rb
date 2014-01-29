@@ -20,9 +20,21 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  helper_method :greeting
+  helper_method :greeting, :get_post_type
+
+  def get_post_type(post)
+    Feed.find(post.feed_id).type
+  end
 
   def get_posts
-    @posts = Post.all 
+    user_subs = Subscription.where("user_id = #{current_user.id}") unless current_user.nil?  # user_subs is all subscriptions that match user_id
+    @posts = [] # Start w/empty array of posts
+    if user_subs.nil? # If there aren't any subs for that user return
+      return
+    else
+      user_subs.each { |sub|  # Otherwise, for each subscription, for its corresponding feed, add all the posts association with that feed to the posts array (Post table has feed_id)
+        @posts = @posts + Post.where("feed_id = #{sub.feed_id}") 
+      }  
+    end
   end
 end
