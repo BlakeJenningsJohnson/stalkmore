@@ -35,6 +35,8 @@ end
 
 
 gem 'omniauth'
+gem "omniauth-twitter"
+
 
 group :development do
   gem 'better_errors'
