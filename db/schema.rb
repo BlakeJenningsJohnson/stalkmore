@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140126045129) do
     t.string   "content_type"
     t.string   "title"
     t.string   "author"
-    t.datetime "post_date"  
+    t.datetime "post_date"
     t.string   "url"
     t.integer  "feed_id"
     t.text     "content"

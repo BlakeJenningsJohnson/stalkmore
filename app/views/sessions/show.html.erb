@@ -1,32 +1,6 @@
 <div class="container">
 <h1>Hi, <%= greeting %>!</h1>
 
-<!-- <%# if @posts.any? %>
-<%# @posts.flatten.each do | post | %>
-  <%# if get_post_type(post) == "RssFeed" %>
-    <div class="media-body">
-      <h4 class="media-heading"><%#= link_to post.title, post.url %></h4>
-      <ul class= "media-list">
-        <li class= "media">
-          <a class="pull-left" href="#">
-            <img class="media-object" data-src="holder.js/64x64">
-          </a>
-          <h5><%#= if post.author.nil? then "Unknown Author" else post.author end %>
-          | <%#= post.post_date.to_formatted_s(:long_ordinal) %></h5>
-          <p><%#= strip_tags(post.content.html_safe) %></p>
-        </li>
-      </ul>    
-    </div>
-  <%# elsif get_post_type(post) == "Twitter" %>
-    
-  <%# end %>
-<%# end %> -->
-
-<%# else %>
-<!-- <div class="alert alert-info">
- Search for users to grow your feed!
-</div>
-<%# end %> -->
 
 
   <% if current_user.posts %>
@@ -38,7 +12,14 @@
         </div>
         <h1><li><%= post.title.html_safe if post.title %></li></h1>
         <div id= "content" >
-          <li><%= post.content.html_safe if post.content %></li>
+          <li>
+            <% if post.content %>
+              <%= post.content.html_safe %> 
+              <% if post.content.length > 300 %>
+                <%= link_to "See more", post.url %>
+              <% end %>
+            <% end %>
+          </li>
         </div>
         <div id= "date">
           <li><%= post.post_date.strftime("Posted on %B %e, %l:%M %p") if post.post_date %></li><br>
