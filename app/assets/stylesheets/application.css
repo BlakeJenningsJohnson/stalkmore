@@ -26,14 +26,38 @@ body {
  padding-top: 70px; 
 }
 
-.nav navbar-nav navbar-right {
-  padding-right: 50px;
-}
-
-ul li {
+li {
   list-style: none;
 }
 
 hr {
-  background-color: red;
+  margin-top: 2px;
+  color: red;
 }
+
+#date {
+  color: purple;
+}
+
+#author {
+  size: 15px;
+  color: green;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.tweet {
+  padding-left: 30px;
+  background-color: #F7F5BA;
+}
+
+.tumble {
+  padding-left: 30px;
+  background-color: #2c4762;
+}
+
+.rss {
+  padding-left: 30px;
+  background-color: #EF9113;
+}
+

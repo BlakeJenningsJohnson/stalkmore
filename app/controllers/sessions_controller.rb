@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       @feeds = current_user.feeds
       @all_the_posts = current_user.posts.order('post_date DESC')
     else 
-      redirect_to sign_in_path
+      render "home"
     end
   end
 
