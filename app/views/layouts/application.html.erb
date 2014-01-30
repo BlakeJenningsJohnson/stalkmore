@@ -56,9 +56,9 @@
 
     <ul class="nav navbar-nav navbar-right">
       <% if current_user != nil %>
-      <li><%= link_to "Sign Out", sign_out_path[:provider] %></li>
+      <li><%= link_to "Sign Out", sign_out_path %></li>
       <% else %>
-      <li><%= link_to "Sign In/Up", sign_in_path[:provider] %></li>
+      <li><%= link_to "Sign In/Up", sign_in_path %></li>
       <% end %>
     </ul>
   </div><!-- /.navbar-collapse -->

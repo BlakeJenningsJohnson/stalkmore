@@ -8,9 +8,10 @@ Stalkmore::Application.routes.draw do
   # get "/auth/:provider/callback", to: "sessions#create"
   # post "/auth/:provider/callback", to: "sessions#create" # This is what the below 'match' method does.
   match "/auth/:provider/callback", to: "sessions#create", via: [:get, :post]
+  # get "/auth/:provider", to: "sessions#show"
   get "/test", to: "test#index"
-  get "users/sign_in", to: redirect("auth/:provider"), as: :sign_in
-  get "/signout" => "sessions#destroy", :as => :signout
+  get "/sign_in", to: redirect("/auth/twitter"), as: :sign_in
+  get "/sign_out" => "sessions#sign_out", :as => :sign_out
 
 
   #twitter search feature
