@@ -10,7 +10,7 @@ Stalkmore::Application.routes.draw do
   match "/auth/:provider/callback", to: "sessions#create", via: [:get, :post]
   # get "/auth/:provider", to: "sessions#show"
   get "/test", to: "test#index"
-  get "/sign_in", to: redirect("/auth/twitter"), as: :sign_in
+  get "/sign_in", to: "sessions#sign_in", as: :sign_in
   get "/sign_out" => "sessions#sign_out", :as => :sign_out
 
 

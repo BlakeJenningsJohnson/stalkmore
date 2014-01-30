@@ -1,13 +1,12 @@
 class SessionsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
-
   def show
-    if current_user 
+    if current_user
       @feeds = current_user.feeds
       @all_the_posts = current_user.posts.order('post_date DESC')
     else 
-      redirect_to "home"
+      render :index
     end
   end
 
@@ -27,6 +26,10 @@ class SessionsController < ApplicationController
     else
       redirect_to "/", notice: "Failed to authenticate. Please try a dragon."
     end
+  end
+
+  def sign_in
+    redirect_to "/auth/twitter"
   end
 
   def sign_out
