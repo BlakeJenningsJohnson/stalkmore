@@ -57,6 +57,11 @@ hr { /*I can't figure out how to do this*/
 
 .tumble {
   padding-left: 30px;
-  background-color: #E0E0D7;
+  background-color: #2c4762;
+}
+
+.rss {
+  padding-left: 30px;
+  background-color: #EF9113;
 }
 

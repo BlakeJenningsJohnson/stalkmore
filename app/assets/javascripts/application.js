@@ -16,4 +16,7 @@
 // = require turbolinks
 // = require_tree .
 
-
+function tumblrfocus()
+{
+document.getElementById('search').focus();
+}
