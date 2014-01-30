@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  helper_method :greeting, :get_post_type
+  helper_method :greeting
 
   # def get_post_type(post)
   #   Feed.find(post.feed_id).type
