@@ -1,6 +1,7 @@
 Stalkmore::Application.routes.draw do
 
-  root to: "sessions#show"
+  root to: "posts#index"
+  get "/welcome", to: "sessions#welcome", as: :welcome
   post "/feeds", to: "feeds#create", as: :feed
   get "/search/tumbles", to: "tumbles#search", as: :tumbles
   # get "users/sign_in", to: redirect("/auth/developer"), as: :sign_in
