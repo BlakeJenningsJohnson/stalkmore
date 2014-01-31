@@ -5,7 +5,7 @@ class FeedsController < ApplicationController
 
   def create
     @feed = Feed.find_or_create_by(uid: params["uid"], type: params["type"])  #views have to pass in type
-    @subscription = Subscription.find_or_create_by(user_id: current_user.id, feed_id: @feed.id)
+    @subscription = Subscription.find_or_create_by(user_id: @current_user.id, feed_id: @feed.id)
     if @feed.save! && @subscription.save!
       @feed.save_posts
       redirect_to "/", notice: "A new person to stalk! Look!"

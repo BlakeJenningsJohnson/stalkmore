@@ -16,4 +16,7 @@
 // = require turbolinks
 // = require_tree .
 
-
+function textBoxFocus(textbox_id)
+{
+document.getElementById(textbox_id).focus();
+}

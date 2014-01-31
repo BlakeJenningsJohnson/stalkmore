@@ -1,17 +1,25 @@
 Stalkmore::Application.routes.draw do
 
-  root to: "sessions#show"
+  root to: "posts#index"
+  get "/welcome", to: "sessions#welcome", as: :welcome
   post "/feeds", to: "feeds#create", as: :feed
   get "/search/tumbles", to: "tumbles#search", as: :tumbles
-  get "users/sign_in", to: redirect("/auth/developer"), as: :sign_in
-  get "/users/sign_out", to: "sessions#sign_out", as: :sign_out
+  # get "users/sign_in", to: redirect("/auth/developer"), as: :sign_in
+  # get "/users/sign_out", to: "sessions#sign_out", as: :sign_out
   # get "/auth/:provider/callback", to: "sessions#create"
   # post "/auth/:provider/callback", to: "sessions#create" # This is what the below 'match' method does.
   match "/auth/:provider/callback", to: "sessions#create", via: [:get, :post]
+  # get "/auth/:provider", to: "sessions#show"
   get "/test", to: "test#index"
+  get "/sign_in", to: "sessions#sign_in", as: :sign_in
+  get "/sign_out" => "sessions#sign_out", :as => :sign_out
+
+
 
   #twitter search feature
   get "/twitter/search", to: "twitter#search"
+
+  post "/twitter/posttweet", to: "twitter#posttweet"
 
   # rss search
   get "rss/search", to: "rss#search"

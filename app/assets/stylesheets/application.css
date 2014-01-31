@@ -25,15 +25,23 @@
        url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
+/*navbar_header {
+  background: blue;
+}*/
+
 body {
  padding-top: 70px; 
+}
+
+.nav.navbar-nav.navbar-right li a {
+  padding-right: 50px;
 }
 
 li {
   list-style: none;
 }
 
-hr {
+hr { /*I can't figure out how to do this*/
   margin-top: 2px;
   color: red;
 }

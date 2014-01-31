@@ -1,5 +1,5 @@
 <div class="container">
-<h1>Hi, <%= greeting %>!</h1>
+<h1>Hi, <%= @current_user.username %>!</h1>
 
 
 
@@ -8,7 +8,7 @@
       <div class="<%= post.content_type %>">
         <hr>
         <div id= "author">
-          <li><%= if post.author then post.author.html_safe else puts "Unknown Author" end %></li>
+          <li><%= if post.author then post.author.html_safe else "Unknown Author" end %>: </li>
         </div>
         <h1><li><%= post.title.html_safe if post.title %></li></h1>
         <div id= "content" >
@@ -30,4 +30,3 @@
       <h1>Search for new people to stalk!</h1>
   <% end %>
 </div>
-
