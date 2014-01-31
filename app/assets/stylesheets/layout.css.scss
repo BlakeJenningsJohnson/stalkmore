@@ -3,7 +3,7 @@
   src: url('blackcasper/BlackCasper.ttf');
 }
 
-body {
+body/*div#landing-page*/ {
  padding-top: 70px; 
  background-color: black;
  /*background-image: image-url('background.jpg');*/
@@ -66,5 +66,8 @@ div#come_stalk {
   margin: 0 auto;
 }
 
+#stalk {
+  text-align: center;
+}
 
   
