@@ -23,7 +23,7 @@ class RssFeed < Feed
           :post_date => entry.published,
           :content   => entry.summary.try(:truncate, 340),
           :url       => entry.url,
-          :feed_id   => self.id, # where self is this specific RssFeed
+          :feed_id   => self.id, 
           :content_type => "rss"
           )
       end
