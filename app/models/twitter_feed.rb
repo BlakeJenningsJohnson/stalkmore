@@ -1,6 +1,6 @@
  class TwitterFeed < Feed
 
-  def client
+  def client # change client to self.client?
     Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
       config.consumer_secret     = ENV["TWITTER_CONSUMER_SECRET"]
