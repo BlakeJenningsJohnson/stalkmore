@@ -12,8 +12,6 @@ class SessionsController < ApplicationController
     auth_hash = request.env['omniauth.auth']
     if auth_hash["uid"]
       @user = User.find_or_create_from_omniauth(auth_hash)
-      @user.update(access_token:         auth_hash["credentials"]["token"],
-                   access_token_secret:  auth_hash["credentials"]["secret"])
       if @user
         session[:user_id] = @user.id
         redirect_to "/", notice: "You have been successfully signed in."

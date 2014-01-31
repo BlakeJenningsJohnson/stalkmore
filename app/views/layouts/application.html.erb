@@ -58,7 +58,7 @@
     <!-- start search form for posttweet -->
      <%= form_tag('/twitter/posttweet', method: :post, class: "navbar-form navbar-left") do %>
       <div class="form-group">
-        <%= text_field_tag :posttweet, "", placeholder: "Post a Tweet", class: "form-control" %>
+        <%= text_field_tag :tweet_body, "", placeholder: "Post a Tweet", class: "form-control" %>
       </div>
       <%= submit_tag 'Go', class: "btn btn-default" %>
     <% end %>
