@@ -14,7 +14,7 @@
   end
 
   def save_posts #consider making validations and a find or create by method to eliminate feed duplication bug
-    client.user_timeline(self.uid.to_i).each do |tweet|
+    TwitterFeed.client.user_timeline(self.uid.to_i).each do |tweet|
       Post.create!(
         feed_id: id, 
         content: tweet.text, 
