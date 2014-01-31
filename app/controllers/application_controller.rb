@@ -22,6 +22,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :greeting, :get_post_type
 
+  # def disable_nav
+  #   @disable_nav = true
+  # end
+
   # def get_post_type(post)
   #   Feed.find(post.feed_id).type
   # end

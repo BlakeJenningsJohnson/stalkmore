@@ -22,6 +22,10 @@
        url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
+/*navbar_header {
+  background: blue;
+}*/
+
 body {
  padding-top: 70px; 
 }
