@@ -14,7 +14,13 @@ class TumblrFeed < Feed
     client = Tumblr::Client.new
   end
 
-  def api_posts
+  #def self.api_posts(thing_to_follow)
+    #self.client.posts(thing_to_follow)
+  #end
+  #search method in feedcontroller
+
+  def api_posts #self.api_posts()
+    #TumblrFeed.api_posts(self.uid)
     TumblrFeed.client.posts(self.uid)
   end
 

@@ -3,9 +3,20 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   # before_action :get_posts
+  # before_action :set_current_user
+
+  # def set_current_user
+  #   @current_user = User.find(session[:user_id]) || User.new
+  # end
+
+
 
   def current_user
     current_user ||= User.find(session[:user_id]) if session[:user_id]
+  #   @user = User.new
+  # rescue ActiveRecord::RecordNotFound
+  #   session[:user_id] = nil
+  #   redirect_to "/"
   end
 
   helper_method :current_user
@@ -20,7 +31,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  helper_method :greeting, :get_post_type
+  helper_method :greeting
 
   # def disable_nav
   #   @disable_nav = true
