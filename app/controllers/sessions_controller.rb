@@ -1,13 +1,8 @@
 class SessionsController < ApplicationController
   skip_before_action :verify_authenticity_token
+  skip_before_action :check_current_user
 
-  def show
-    if current_user
-      @feeds = current_user.feeds
-      @all_the_posts = current_user.posts.order('post_date DESC')
-    else 
-      render :index
-    end
+  def welcome
   end
 
   def index
