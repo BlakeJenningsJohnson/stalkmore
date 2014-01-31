@@ -16,7 +16,7 @@
 // = require turbolinks
 // = require_tree .
 
-function tumblrfocus()
+function textBoxFocus(textbox_id)
 {
-document.getElementById('search').focus();
+document.getElementById(textbox_id).focus();
 }

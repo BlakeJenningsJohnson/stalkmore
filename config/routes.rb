@@ -15,8 +15,11 @@ Stalkmore::Application.routes.draw do
   get "/sign_out" => "sessions#sign_out", :as => :sign_out
 
 
+
   #twitter search feature
   get "/twitter/search", to: "twitter#search"
+
+  post "/twitter/posttweet", to: "twitter#posttweet"
 
   # rss search
   get "rss/search", to: "rss#search"

@@ -9,19 +9,6 @@ class User < ActiveRecord::Base
     User.find_by(uid: auth_hash["uid"]) || create_from_omniauth(auth_hash)
   end
 
-  # def posts
-  #   posts = []
-    
-  #   feeds.each do |feed|
-  #     feed.posts.each do |post|
-  #       posts << post
-  #     end
-  #   end
-
-  #   posts
-  # end
-
-
   def self.create_from_omniauth(auth_hash)
     self.create!(
       uid:        auth_hash["uid"],
@@ -33,4 +20,9 @@ class User < ActiveRecord::Base
   rescue ActiveRecord::RecordInvalid
     nil
   end
+
 end
+
+
+
+
