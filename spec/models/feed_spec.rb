@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Feed do let(:feed) { Feed.new(uid: "123456", type: "twitter") }
+describe Feed do let(:feed) { Feed.new(uid: "123456", type: "TwitterFeed") }
 
   describe "validations" do
     it "requires a uid" do
@@ -15,16 +15,16 @@ describe Feed do let(:feed) { Feed.new(uid: "123456", type: "twitter") }
   end
 
   describe "create a new feed" do
-    let(:feed) { Feed.find_or_create_by(uid: params["uid"], type: params[:tumblr_feed]) }
+    let(:feed) { Feed.find_or_create_by(uid: "laughingsquid", type: "TumblrFeed") }
 
-    it "creates a valid user" do
-      expect(user).to be_valid
+    it "creates a valid feed" do
+      expect(feed).to be_valid
     end
 
     context "when it's invalid" do
       it "returns nil" do
-        user = User.find_or_create_from_omniauth({"uid" => "123", "info" => {}})
-        expect(user).to be_nil
+        feed = Feed.find_or_create_by(uid: "123", type: "")
+        expect(feed).to be_nil
       end
     end
   end
