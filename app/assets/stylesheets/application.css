@@ -13,6 +13,9 @@
  *= require_tree .
  */
 
+
+
+
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../assets/glyphicons-halflings-regular.eot');
@@ -68,4 +71,6 @@ hr { /*I can't figure out how to do this*/
   padding-left: 30px;
   background-color: #EF9113;
 }
+
+
 
