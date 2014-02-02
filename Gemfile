@@ -25,7 +25,7 @@ group :development do
 end
 
 group :test, :development do
-     gem 'rspec-rails'
+  gem 'rspec-rails'
 end
 
 gem 'rails_12factor'
