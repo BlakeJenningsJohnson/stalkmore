@@ -3,35 +3,53 @@
 
 <% @current_user.get_homefeed.flatten.each do |tweet| %>
   <ul>
-    <li><%= "@" + tweet.user.screen_name %>:</li>
-    <li><%= tweet.text %></li>
+    <div id="homefeed-tweets">
+      <li><strong><%= tweet.user.username %></strong> <%= "@" + tweet.user.screen_name %>:</li>
+      <li><%= tweet.text %></li>
+    </div>
   </ul>
 <% end %>
 
   <% if @current_user.posts %>
       <% @all_the_posts.flatten.each do |post| %>
       <div class="<%= post.content_type %>">
-        <hr>
-        <div id= "author">
-          <li><%= if post.author then post.author.html_safe else "Unknown Author" end %>: </li>
+     
+        <div class="lead author">
+          <ul>
+            <li>
+              <%= if post.author then post.author.html_safe else "Unknown Author" end %>: 
+            </li>
+          </ul>
         </div>
-        <h1><li><%= post.title.html_safe if post.title %></li></h1>
-        <div id= "content" >
+        <h2><ul>      
           <li>
-            <% if post.content %>
-              <%= post.content.html_safe %> 
-              <% if post.content.length > 300 %>
-                <%= link_to "See more", post.url %>
-              <% end %>
-            <% end %>
+            <%= link_to strip_tags(post.title), post.url if post.title %>
           </li>
+        </ul></h2>
+        <div id= "content" >
+          <ul>
+            <li>
+              <% if post.content %>
+                <p>
+                <%= post.content.html_safe %> 
+                <% if post.content.length > 300 %>
+                  <%= link_to "See more", post.url %>
+                <% end %>
+                </p>
+              <% end %>
+            </li>
+          </ul>
         </div>
-        <div id= "date">
-          <li><%= post.post_date.strftime("Posted on %B %e, %l:%M %p") if post.post_date %></li><br>
+        <div class= "date">
+          <ul>
+            <li>
+              <h6><%= post.post_date.strftime("Posted on %B %e, %l:%M %p") if post.post_date %></h6>
+            </li>
+          </ul>
         </div>
       </div>
       <% end %>
   <% else %>
-      <h1>Search for new people to stalk!</h1>
+    <h1>Expand your view!</h1>
   <% end %>
 </div>

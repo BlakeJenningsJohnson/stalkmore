@@ -51,11 +51,11 @@ class TumblrFeed < Feed
           tumble.content = tu_post["player"][2]["embed_code"]
           tumble.title  = tu_post["caption"].try(:truncate, 240)
       elsif tu_post["type"] == "quote"
-          tumble.content = tu_post["body"]
-          tumble.title  = tu_post["source"]
+          tumble.content = tu_post["body"].try(:truncate, 240)
+          tumble.title  = tu_post["source"].try(:truncate, 240)
       elsif tu_post["type"] == "answer"
-          tumble.content = tu_post["answer"]
-          tumble.title  = tu_post["question"]
+          tumble.content = tu_post["answer"].try(:truncate, 240)
+          tumble.title  = tu_post["question"].try(:truncate, 240)
       end
       tumble.save
     end

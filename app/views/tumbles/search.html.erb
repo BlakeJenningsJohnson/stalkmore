@@ -1,12 +1,23 @@
-ALL THE SEARCHES<br><br>
+SEARCH RESULTS:
+<br>
+<br>
 
-
-<ul>
-<%=link_to feed_path(uid: @tumbles["blog"]["name"], type: "TumblrFeed"), method: :post do %>
-      <li>
-        <img src="<%= "http://api.tumblr.com/v2/blog/#{@tumbles["blog"]["name"]}.tumblr.com/avatar/512" %>"/> 
-        <!-- <span class = "username"> --><%#= "@" + twitter_user.username %><!-- </span> -->
-      </li>
+<div>
+  <div style= "float:left">
+    <%=link_to feed_path(uid: @tumbles["blog"]["name"], type: "TumblrFeed"), method: :post do %>
+      <img src="<%= "http://api.tumblr.com/v2/blog/#{@tumbles["blog"]["name"]}.tumblr.com/avatar/512" %>" style= "width:75px; padding-right: 10px"/
+      > 
+  </div>
+  <div style= "padding-bottom: 4px">
+    <%= form_tag feed_path(uid: @tumbles["blog"]["name"], type: "TumblrFeed") do %>
+      <%= submit_tag 'Add to Feed', class: "btn btn-primary btn-sm"  %>
     <% end %>
-</ul>
-<%= link_to "View #{@title} on Tumblr!", "#{@url}" %>
+    <% end %>
+  </div>
+  <div>
+    <form action="<%= "#{@url}" %>">
+      <input class="btn btn-primary btn-sm" type="submit" value="<%= "View on Tumblr!" %>"
+      >
+    </form>
+  </div>
+</div>
