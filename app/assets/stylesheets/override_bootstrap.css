@@ -1,0 +1,22 @@
+.navbar-default {
+  background-color: #718ED1;
+  border-color: #718ED1;
+}
+
+a.navbar-brand {
+  padding-left: 30px;
+  color: black;
+}
+
+.navbar-collapse.collapse {
+  display: center;
+}
+
+a {
+  color: black;
+}
+
+a:link {color: black;}      /* unvisited link */
+a:visited {color: black;}   /* visited link */
+a:hover {color: black;}     /* mouse over link */
+a:active {color: black;}    /* selected link */
