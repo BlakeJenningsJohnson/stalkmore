@@ -8,25 +8,39 @@
       <div class="<%= post.content_type %>">
         <hr>
         <div id= "author">
-          <li><%= if post.author then post.author.html_safe else "Unknown Author" end %>: </li>
+          <ul>
+            <li>
+              <%= if post.author then post.author.html_safe else "Unknown Author" end %>: 
+            </li>
+          </ul>
         </div>
-        <h1><li><%= post.title.html_safe if post.title %></li></h1>
-        <div id= "content" >
+        <h1><ul>
           <li>
-            <% if post.content %>
-              <%= post.content.html_safe %> 
-              <% if post.content.length > 300 %>
-                <%= link_to "See more", post.url %>
-              <% end %>
-            <% end %>
+            <%= post.title.html_safe if post.title %>
           </li>
+        </ul></h1>
+        <div id= "content" >
+          <ul>
+            <li>
+              <% if post.content %>
+                <%= post.content.html_safe %> 
+                <% if post.content.length > 300 %>
+                  <%= link_to "See more", post.url %>
+                <% end %>
+              <% end %>
+            </li>
+          </ul>
         </div>
         <div id= "date">
-          <li><%= post.post_date.strftime("Posted on %B %e, %l:%M %p") if post.post_date %></li><br>
+          <ul>
+            <li>
+              <%= post.post_date.strftime("Posted on %B %e, %l:%M %p") if post.post_date %>
+            </li><br>
+          </ul>
         </div>
       </div>
       <% end %>
   <% else %>
-      <h1>Search for new people to stalk!</h1>
+    <h1>Search for new people to stalk!</h1>
   <% end %>
 </div>

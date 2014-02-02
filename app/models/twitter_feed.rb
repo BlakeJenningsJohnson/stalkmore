@@ -1,4 +1,4 @@
- class TwitterFeed < Feed
+class TwitterFeed < Feed
 
   def self.client
     Twitter::REST::Client.new do |config|
