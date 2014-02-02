@@ -1,5 +1,5 @@
 .navbar-default {
-  background-color: #718ED1;
+  background-color: #121E78;
   border-color: #718ED1;
 }
 
@@ -12,8 +12,16 @@ a.navbar-brand {
   display: center;
 }
 
-a {
-  color: black;
+.navbar-default .navbar-brand {
+  color: white;
+}
+
+a.li .navbar-default .navbar-nav {
+  color: white;
+}
+
+.navbar-default .navbar-nav li a {
+  color: white;
 }
 
 a:link {color: black;}      /* unvisited link */
