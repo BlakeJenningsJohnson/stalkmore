@@ -1,4 +1,4 @@
 class Post < ActiveRecord::Base
   belongs_to :feed
-  validates :posted_at, presence: true
+  validates :post_date, presence: true
 end

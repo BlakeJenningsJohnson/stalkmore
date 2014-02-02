@@ -1,6 +1,7 @@
 require 'spec_helper'
 
-describe Feed do let(:feed) { Feed.new(uid: "123456", type: "TwitterFeed") }
+describe Feed do 
+  let(:feed) { Feed.new(uid: "123456", type: "TwitterFeed") }
 
   describe "validations" do
     it "requires a uid" do
@@ -15,7 +16,7 @@ describe Feed do let(:feed) { Feed.new(uid: "123456", type: "TwitterFeed") }
   end
 
   describe "create a new feed" do
-    let(:feed) { Feed.find_or_create_by(uid: "laughingsquid", type: "TumblrFeed") }
+    let(:feed) { Feed.new(uid: "laughingsquid", type: "TumblrFeed") }
 
     it "creates a valid feed" do
       expect(feed).to be_valid
@@ -23,8 +24,8 @@ describe Feed do let(:feed) { Feed.new(uid: "123456", type: "TwitterFeed") }
 
     context "when it's invalid" do
       it "returns nil" do
-        feed = Feed.find_or_create_by(uid: "123", type: "")
-        expect(feed).to be_nil
+        feed = Feed.new(uid: "123", type: "")
+        expect(feed).to be_invalid
       end
     end
   end

@@ -8,11 +8,9 @@ gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
 group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
@@ -24,9 +22,12 @@ group :development do
   gem 'binding_of_caller'
 end
 
-group :test, :development do
-     gem 'rspec-rails'
+group :test do
+  gem 'rspec-rails'
+  gem 'simplecov'
 end
+
+
 
 gem 'rails_12factor'
 gem 'tumblr_client'
@@ -34,17 +35,6 @@ gem 'figaro'
 gem 'twitter'
 gem 'feedzirra'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
 
 
 
