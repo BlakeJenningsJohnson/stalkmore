@@ -14,7 +14,9 @@ class ApplicationController < ActionController::Base
 
   def require_current_user
     if check_current_user.nil?
-      redirect_to welcome_path, notice: "You have to sign in to do that."
+      redirect_to welcome_path
+
+      # When would this redirect happen if check_current_user is called which it is.
     end
   end
 end

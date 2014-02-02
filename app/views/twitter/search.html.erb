@@ -1,16 +1,18 @@
 <% @users.each do |twitter_user| %>
-  <ul>
+ 
+<div style= "margin-bottom: 10px">
+  <div style= "float:left; padding-right: 10px">
     <%=link_to feed_path(uid: twitter_user.id, type: "TwitterFeed"), method: :post do %>
-      <li>
-        <img src="<%= twitter_user.profile_image_url %>"/> 
-        <span class = "username"><%= "@" + twitter_user.username %></span>
-      </li>
+      <img src="<%= twitter_user.profile_image_url %>" style= "width:50px"> 
+  </div>
+  <div style= "padding-top: 10px">
+    <form>
+      <input class="btn btn-primary btn-sm" type="submit" value="<%= "Add @" + twitter_user.username + " to feed." %>">
+    </form>
+  </div>
     <% end %>
-  </ul>
+    <div style= "clear:both">
+    </div>
+</div>
 <% end %>
 
-
-
-
-
-<%#= @feed %>

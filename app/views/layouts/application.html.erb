@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Stalkmore</title>
+  <title>Bird's Eye View</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.2.0/holder.js"></script>
@@ -12,6 +12,7 @@
   <%= csrf_meta_tags %> 
 </head>
 
+<% if @current_user %>
 <header>
   <%#= render 'navbar_header' unless @disable_nav %>
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -75,9 +76,10 @@
       <li><%= link_to "Sign In/Up", sign_in_path %></li>
       <% end %>
     </ul>
-  </div><!-- /.navbar-collapse -->
+  </div>
 </nav>
 </header>
+<% end %>
 
 <body>
 <div style= "padding: 20px">
