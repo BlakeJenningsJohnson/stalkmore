@@ -33,6 +33,7 @@ gem 'tumblr_client'
 gem 'figaro'
 gem 'twitter'
 gem 'feedzirra'
+gem 'httparty'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
