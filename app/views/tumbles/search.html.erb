@@ -1,8 +1,4 @@
-SEARCH RESULTS:
-<br>
-<br>
-
-<div>
+<div class= "container">
   <div style= "float:left">
     <%=link_to feed_path(uid: @tumbles["blog"]["name"], type: "TumblrFeed"), method: :post do %>
       <img src="<%= "http://api.tumblr.com/v2/blog/#{@tumbles["blog"]["name"]}.tumblr.com/avatar/512" %>" style= "width:75px; padding-right: 10px"/
