@@ -13,7 +13,9 @@
     <div class="navbar-header">
       <button type="button" class="navbar-toggle">
       </button>
-      <a class="navbar-brand" href="#">Home</a>
+
+      <a class="navbar-brand" href="/">HOME</a>
+
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -53,7 +55,9 @@
         <div class="form-group">
           <%= text_field_tag :tweet_body, "", placeholder: "Post a Tweet", class: "form-control" %>
         </div>
-        <%= submit_tag 'Go', class: "btn btn-default" %>
+
+        <%= submit_tag 'Post', class: "btn btn-default" %>
+
       <% end %>
       <!-- end search form for posttweet -->
 
@@ -70,7 +74,9 @@
   <% end %>
 
   <body>
-    <div style= "padding: 20px">
+
+    <div class="container">
+
       <% if flash[:notice] -%>
         <div class = "alert alert-info">
           <%= flash[:notice] %>

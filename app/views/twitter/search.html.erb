@@ -1,22 +1,20 @@
-SEARCH RESULTS:
-<br>
-<br>
-
-<% @users.each do |twitter_user| %>
- 
-<div style= "margin-bottom: 10px">
-  <div style= "float:left; padding-right: 10px">
-    <%=link_to feed_path(uid: twitter_user.id, type: "TwitterFeed"), method: :post do %>
-      <img src="<%= twitter_user.profile_image_url %>" style= "width:75px"> 
-  </div>
-  <div style= "padding-top: 20px">
-    <form>
-      <input class="btn btn-primary btn-sm" type="submit" value="<%= "Add @" + twitter_user.username + " to feed." %>">
-    </form>
-  </div>
-    <% end %>
-    <div style= "clear:both">
+<div class="container">
+  <h1>SEARCH RESULTS:</h1>
+  <% @users.each do |twitter_user| %>
+  <div style= "margin-bottom: 10px">
+    <div style= "float:left; padding-right: 10px">
+      <%=link_to feed_path(uid: twitter_user.id, type: "TwitterFeed"), method: :post do %>
+        <img src="<%= twitter_user.profile_image_url %>" style= "width:75px"> 
     </div>
+    <div style= "padding-top: 20px">
+      <form>
+        <input class="btn btn-primary btn-sm" type="submit" value="<%= "Add @" + twitter_user.username + " to feed." %>">
+      </form>
+    </div>
+      <% end %>
+      <div style= "clear:both">
+      </div>
+    </div>
+    <% end %>
 </div>
-<% end %>
 

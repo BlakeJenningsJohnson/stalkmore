@@ -11,6 +11,7 @@
  *= require_self
  *= require bootstrap
  *= require_tree .
+ *= require override_bootstrap
  */
 
 
@@ -28,7 +29,7 @@ body {
 }
 
 .nav.navbar-nav.navbar-right li a {
-  padding-right: 50px;
+/*  padding-right: 50px;*/
 }
 /*.navbar-default {
   background-color: black;
@@ -47,18 +48,22 @@ li {
 }
 
 .tweet, .tumble, .rss {
+  border-radius:25px;
   padding: 20px;
   margin-bottom: 20px;
-  background-color: #84EFFF;
-  border: 1px solid black;
+  box-shadow: 5px 5px 5px #B0A4A4;
 }
 
 .tumble {
-  background-color: #39A3B2;
+  background-color: #D0D2D6;
 }
 
 .rss {
-  background-color: #FFC99E;
+  background-color: #C3DBEB;
+}
+
+.tweet {
+  background-color: #8DD2FC;
 }
 
 a:link {color: black;}      /* unvisited link */

@@ -3,64 +3,69 @@
 }
 
 body/*div#landing-page*/ {
- padding-top: 70px; 
- background-color: #B28561;
+/* padding-top: 70px;*/ 
+ background-color: white;
  /*background-image: image-url('background.jpg');*/
 }
 
-iframe#video {
+p {
+  padding-bottom: 0;
+}
+h1 {
+  font-size: 20pt;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#landing-page {
+  padding-top: 0;
+}
+
+#video {
   margin: 70px auto;
 }
 
-div#center {
+#center {
   text-align: center;
 }
 
-img.stalker-eyes {
+.stalker-eyes {
   margin: 30px;
   width: 300px;
 }
 
-
-div#logo {
+#logo {
   text-align: center;
 }
 
-
-div#eyes-container {
+#eyes-container {
   text-align: center;
   padding: 20px;
+  margin: auto;
 }
 
-h3#home {
-  font-size: 45px;
-  font-family: 'Zeyada', cursive;
-  color: rgb(218, 154, 48);
+#home {
+  font-size: 15px;
+  font-family: 'Rock Salt', cursive;
+  color: #121E78;
   text-align: center;
-  margin: 0px 0px 40px 0px;
+  margin: 0px 0px 20px 0px;
   border-top: 1px solid rgb(200, 200, 200);
   border-bottom: 1px solid rgb(200, 200, 200);
-  padding: 30px;
+  padding: 10px;
 }
 
-div#people-watch {
+h4#home {
+  border: none;
+  padding-bottom: 0;
+}
+
+#people-watch {
   width: 780px;
   margin: 0 auto;
 }
 
-/*span#watch {
-  font-family: 'Rock Salt', cursive;
-}*/
-
-h4#home {
-  font-size: 25px;
-  color: rgb(200, 200, 200);
-  text-align: center;
-  margin-top: 25px;
-  font-family: 'Stint Ultra Expanded', cursive;
-}
-
-div#come_stalk {
+#come_stalk {
   width: 700px;
   margin: 0 auto;
 }

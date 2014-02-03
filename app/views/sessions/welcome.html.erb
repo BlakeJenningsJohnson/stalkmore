@@ -1,24 +1,25 @@
 <body id="landing-page" >
 <div id="blah">
   <div id="logo">
-    <img src='/assets/stalkmore.jpg' alt="logo">
+    <h1>From a Bird's Eye</h1>
   </div>
   <div id="people-watch">
     <h3 id="home">
-      You’ve got people you want to watch?
+      Come enjoy the view.
     </h3>
   </div>
   <div id="eyes-container">
-    <img class="stalker-eyes" src="http://media.giphy.com/media/10AR8ZmmEDHK2Q/giphy.gif" alt="Stalker eyes">
-    <img class="stalker-eyes" src="http://media.giphy.com/media/10AR8ZmmEDHK2Q/giphy.gif" alt="Stalker eyes">
-    <img class="stalker-eyes" src="http://media.giphy.com/media/10AR8ZmmEDHK2Q/giphy.gif" alt="Stalker eyes">
+    <%= image_tag("birds_eye.png")%>
   </div>
   <div id="come_stalk">
     <h4 id="home">
-      You wanna know what they’re up to on Tumblr, Twitter, or another blog? Stalkmore can put all that in one place for you. C’mon, join us. Let us be your eyes.
+      <p>Get all your feeds in one place, on one page.</p>
+      <p>Log In with Twitter:</p>
     </h4>
     <div id="stalk">
-      <%= link_to "Log in with Twitter", sign_in_path, id: "twitter-login", class: "btn btn-default" %>
+
+      <%#= link_to "Log in with Twitter" (image_tag, sign_in_path, id: "twitter-login", class: "btn btn-default" %>
+      <%= link_to image_tag('twitterblue.png'), sign_in_path %>
     </div>
   </div>
 </div>
