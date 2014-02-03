@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
       @user = User.find_or_create_from_omniauth(auth_hash)
       if @user
         session[:user_id] = @user.id
+        # homefeed
         redirect_to "/"
       else
         redirect_to "/", notice: "Failed to save user."
