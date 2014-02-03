@@ -1,12 +1,10 @@
-SEARCH RESULTS:
-<br>
-<br>
-
-<% if @rss_feed.class == Fixnum %> 
+<div class="container">
+  <% if @rss_feed.class == Fixnum %> 
   <div class= "alert alert-info">
     Invalid RSS URL feed. <a onclick="textBoxFocus('uid')">Please try again.</a>
   </div>
 <% else %>
+  <h1>SEARCH RESULTS:</h1>
   <%= form_tag feed_path(uid: params[:uid], type: "RssFeed") do %>
     <%= @rss_feed.title  %>
     <%= hidden_field_tag :uid, @rss_feed.feed_url %>
@@ -14,3 +12,4 @@ SEARCH RESULTS:
     <%= submit_tag 'Add to Feed', class: "btn btn-primary btn-sm" %>
   <% end %>
 <% end %>
+</div>

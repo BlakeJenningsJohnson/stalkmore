@@ -7,6 +7,7 @@ a.navbar-brand {
   margin: auto;
   padding-left: 120px;
   color: black;
+  padding-right: 0;
 }
 
 .navbar-collapse .collapse {
