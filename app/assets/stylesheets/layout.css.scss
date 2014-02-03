@@ -8,6 +8,10 @@ body/*div#landing-page*/ {
  /*background-image: image-url('background.jpg');*/
 }
 
+#landing-page {
+  padding-top: 0;
+}
+
 #video {
   margin: 70px auto;
 }
@@ -26,7 +30,6 @@ body/*div#landing-page*/ {
   text-align: center;
 }
 
-
 #eyes-container {
   text-align: center;
   padding: 20px;
@@ -34,8 +37,8 @@ body/*div#landing-page*/ {
 
 #home {
   font-size: 45px;
-  font-family: 'Zeyada', cursive;
-  color: rgb(218, 154, 48);
+  font-family: 'Rock Salt', cursive;
+  color: black;
   text-align: center;
   margin: 0px 0px 40px 0px;
   border-top: 1px solid rgb(200, 200, 200);
@@ -54,10 +57,10 @@ body/*div#landing-page*/ {
 
 #home {
   font-size: 25px;
-  color: rgb(200, 200, 200);
+  color: #121E78;
   text-align: center;
   margin-top: 25px;
-  font-family: 'Stint Ultra Expanded', cursive;
+  font-family: 'Rock Salt', cursive;
 }
 
 #come_stalk {
