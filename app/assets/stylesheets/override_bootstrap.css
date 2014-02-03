@@ -1,22 +1,23 @@
 .navbar-default {
-  background-color: #121E78;
+  background-color: #3838B0;
   border-color: #718ED1;
 }
 
 a.navbar-brand {
-  padding-left: 30px;
+  margin: auto;
+  padding-left: 120px;
   color: black;
 }
 
-.navbar-collapse.collapse {
-  display: center;
+.navbar-collapse .collapse {
+  margin: auto;
 }
 
 .navbar-default .navbar-brand {
   color: white;
 }
 
-a.li .navbar-default .navbar-nav {
+.li .navbar-default .navbar-nav {
   color: white;
 }
 
