@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   def self.find_or_create_from_omniauth(auth_hash)
     user = User.find_by(uid: auth_hash["uid"]) || create_from_omniauth(auth_hash)
+    return unless user
     user.update(access_token:         auth_hash["credentials"]["token"],
                 access_token_secret:  auth_hash["credentials"]["secret"])
     user
