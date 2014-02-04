@@ -35,6 +35,7 @@ gem 'tumblr_client'
 gem 'figaro'
 gem 'twitter'
 gem 'feedzirra'
+gem 'httparty'
 
 
 

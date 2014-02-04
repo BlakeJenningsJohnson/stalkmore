@@ -10,7 +10,7 @@ class TwitterFeed < Feed
   end
 
   def api_posts
-    TwitterFeed.client.user_timeline(self.uid.to_i)
+   TwitterFeed.client.user_timeline(self.uid.to_i)
   end
 
   def save_posts #consider making validations and a find or create by method to eliminate feed duplication bug
@@ -26,7 +26,4 @@ class TwitterFeed < Feed
       end
     end  
   end
-
- 
-
 end
