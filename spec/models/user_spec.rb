@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe User do let(:user) { User.new(username: "Blake", uid: "123456", provider: "twitter") }
+describe User do let(:user) { User.new(username: "Blake", uid: "161286812", provider: "twitter") }
 
   describe "validations" do
     it "requires a username" do
@@ -22,12 +22,14 @@ describe User do let(:user) { User.new(username: "Blake", uid: "123456", provide
     let(:user) { User.find_or_create_from_omniauth(OmniAuth.config.mock_auth[:twitter]) }
 
     it "creates a valid user" do
+      # p OmniAuth.config.mock_auth[:twitter]
       expect(user).to be_valid
     end
 
     context "when it's invalid" do
+      let(:user) { }
       it "returns nil" do
-        user = User.find_or_create_from_omniauth({"uid" => "123", "info" => {}})
+        user = User.find_or_create_from_omniauth({"uid" => "123", "info" => {}, "credentials" => {}})
         expect(user).to be_nil
       end
     end
