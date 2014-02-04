@@ -1,92 +1,83 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Stalkmore</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.2.0/holder.js"></script>
-  <link href='http://fonts.googleapis.com/css?family=Zeyada' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Stint+Ultra+Expanded' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Zeyada' rel='stylesheet' type='text/css'>
-  <%= csrf_meta_tags %> 
-</head>
+  <head>
+    <title>Bird's Eye View</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %> 
+  </head>
 
-<header>
-  <%#= render 'navbar_header' unless @disable_nav %>
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="#">Home</a>
-  </div>
+  <% if @current_user %>
+  <header>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle">
+      </button>
+      <a class="navbar-brand" href="#">HOME</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      </ul>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-    </ul>
-    <!-- start search form for tumbles -->
-    <%= form_tag tumbles_path,  method: "get", 
-                                class:  "navbar-form navbar-left", 
-                                role:   "search" do %>
-      <div class="form-group">
-        <%= text_field_tag :search, "", class: "form-control", placeholder: "Find a Tumblr" %>
-      </div>
-      <%= submit_tag "Go", class: "btn btn-default" %>
-    <% end %> 
-    <!-- end search form for tumbles -->
+      <!-- start search form for tumbles -->
+      <%= form_tag tumbles_path,  method: "get", 
+                                  class:  "navbar-form navbar-left", 
+                                  role:   "search" do %>
+        <div class="form-group">
+          <%= text_field_tag :search, "", class: "form-control", placeholder: "Find a Tumblr" %>
+        </div>
+        <%= submit_tag "Go", class: "btn btn-default" %>
+      <% end %> 
+      <!-- end search form for tumbles -->
 
-    <!-- start twitter search -->
-    <%= form_tag('/twitter/search', method: :get, class: "navbar-form navbar-left", role: "search") do %>
-      <div class="form-group">
-        <%= text_field_tag :user_name, "", placeholder: "Find a Tweeter", class: "form-control" %>
-      </div>
-      <%= submit_tag 'Go', class: "btn btn-default" %>
-    <% end %>
-    <!-- end search form for twitter -->
-
-    <!-- start search form for rss -->
-     <%= form_tag('/rss/search', method: :get, class: "navbar-form navbar-left", role: "search") do %>
-      <div class="form-group">
-        <%= text_field_tag :uid, "", placeholder: "Add a Feed", class: "form-control" %>
-      </div>
-      <%= submit_tag 'Go', class: "btn btn-default" %>
-    <% end %>
-    <!-- end search form for rss -->
-
-    <!-- start search form for posttweet -->
-     <%= form_tag('/twitter/posttweet', method: :post, class: "navbar-form navbar-left") do %>
-      <div class="form-group">
-        <%= text_field_tag :tweet_body, "", placeholder: "Post a Tweet", class: "form-control" %>
-      </div>
-      <%= submit_tag 'Go', class: "btn btn-default" %>
-    <% end %>
-    <!-- end search form for posttweet -->
-
-    <ul class="nav navbar-nav">
-      <% if @current_user != nil %>
-      <li><%= link_to "Sign Out", sign_out_path %></li>
-      <% else %>
-      <li><%= link_to "Sign In/Up", sign_in_path %></li>
+      <!-- start twitter search -->
+      <%= form_tag('/twitter/search', method: :get, class: "navbar-form navbar-left", role: "search") do %>
+        <div class="form-group">
+          <%= text_field_tag :user_name, "", placeholder: "Find a Tweeter", class: "form-control" %>
+        </div>
+        <%= submit_tag 'Go', class: "btn btn-default" %>
       <% end %>
-    </ul>
-  </div><!-- /.navbar-collapse -->
-</nav>
-</header>
+      <!-- end search form for twitter -->
 
-<body>
-<div style= "padding: 20px">
+      <!-- start search form for rss -->
+       <%= form_tag('/rss/search', method: :get, class: "navbar-form navbar-left", role: "search") do %>
+        <div class="form-group">
+          <%= text_field_tag :uid, "", placeholder: "Add a Feed", class: "form-control" %>
+        </div>
+        <%= submit_tag 'Go', class: "btn btn-default" %>
+      <% end %>
+      <!-- end search form for rss -->
 
-<% if flash[:notice] -%>
-  <div class = "alert alert-info"><%= flash[:notice] %></div>
-<% end %>
+      <!-- start search form for posttweet -->
+       <%= form_tag('/twitter/posttweet', method: :post, class: "navbar-form navbar-left") do %>
+        <div class="form-group">
+          <%= text_field_tag :tweet_body, "", placeholder: "Post a Tweet", class: "form-control" %>
+        </div>
+        <%= submit_tag 'Post', class: "btn btn-default" %>
+      <% end %>
+      <!-- end search form for posttweet -->
 
-<%= yield %>
-</div>
-</body>
+      <ul class="nav navbar-nav">
+        <% if @current_user != nil %>
+        <li><%= link_to "Sign Out", sign_out_path %></li>
+        <% else %>
+        <li><%= link_to "Sign In/Up", sign_in_path %></li>
+        <% end %>
+      </ul>
+    </div>
+    </nav>
+  </header>
+  <% end %>
+
+  <body>
+    <div style= "padding: 20px">
+      <% if flash[:notice] -%>
+        <div class = "alert alert-info">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+
+      <%= yield %>
+    </div>
+  </body>
 </html>

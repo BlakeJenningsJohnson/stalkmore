@@ -1,39 +1,38 @@
 @font-face {
-  font-family: 'BlackCasper';
-  src: url('blackcasper/BlackCasper.ttf');
+ 
 }
 
 body/*div#landing-page*/ {
  padding-top: 70px; 
- background-color: black;
+ background-color: white;
  /*background-image: image-url('background.jpg');*/
 }
 
-iframe#video {
+#video {
   margin: 70px auto;
 }
 
-div#center {
+#center {
   text-align: center;
 }
 
-img.stalker-eyes {
+.stalker-eyes {
   margin: 30px;
   width: 300px;
 }
 
 
-div#logo {
+#logo {
   text-align: center;
 }
 
 
-div#eyes-container {
+#eyes-container {
   text-align: center;
   padding: 20px;
 }
 
-h3#home {
+#home {
   font-size: 45px;
   font-family: 'Zeyada', cursive;
   color: rgb(218, 154, 48);
@@ -44,7 +43,7 @@ h3#home {
   padding: 30px;
 }
 
-div#people-watch {
+#people-watch {
   width: 780px;
   margin: 0 auto;
 }
@@ -53,7 +52,7 @@ div#people-watch {
   font-family: 'Rock Salt', cursive;
 }*/
 
-h4#home {
+#home {
   font-size: 25px;
   color: rgb(200, 200, 200);
   text-align: center;
@@ -61,7 +60,7 @@ h4#home {
   font-family: 'Stint Ultra Expanded', cursive;
 }
 
-div#come_stalk {
+#come_stalk {
   width: 700px;
   margin: 0 auto;
 }

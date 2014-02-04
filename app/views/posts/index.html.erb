@@ -1,46 +1,44 @@
 <div class="container">
 <h1>Hi, <%= @current_user.username %>!</h1>
-
-
-
   <% if @current_user.posts %>
       <% @all_the_posts.flatten.each do |post| %>
       <div class="<%= post.content_type %>">
-        <hr>
-        <div id= "author">
+        <div class="lead author">
           <ul>
             <li>
               <%= if post.author then post.author.html_safe else "Unknown Author" end %>: 
             </li>
           </ul>
         </div>
-        <h1><ul>
+        <h2><ul>      
           <li>
-            <%= post.title.html_safe if post.title %>
+            <%= link_to strip_tags(post.title), post.url if post.title %>
           </li>
-        </ul></h1>
+        </ul></h2>
         <div id= "content" >
           <ul>
             <li>
               <% if post.content %>
+                <p>
                 <%= post.content.html_safe %> 
                 <% if post.content.length > 300 %>
                   <%= link_to "See more", post.url %>
                 <% end %>
+                </p>
               <% end %>
             </li>
           </ul>
         </div>
-        <div id= "date">
+        <div class= "date">
           <ul>
             <li>
-              <%= post.post_date.strftime("Posted on %B %e, %l:%M %p") if post.post_date %>
-            </li><br>
+              <h6><%= post.post_date.strftime("Posted on %B %e, %l:%M %p") if post.post_date %></h6>
+            </li>
           </ul>
         </div>
       </div>
       <% end %>
   <% else %>
-    <h1>Search for new people to stalk!</h1>
+    <h1>Expand your view!</h1>
   <% end %>
 </div>
