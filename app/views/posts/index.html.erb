@@ -4,6 +4,14 @@
   <% if @current_user.posts %>
       <% @all_the_posts.flatten.each do |post| %>
       <div class="<%= post.content_type %>">
+        <% if post.content_type == "tweet" %>
+          <%= image_tag("Twitter-icon.png", size: "30x30") %> 
+          <% elsif post.content_type == "tumble" %>
+            <%=image_tag("Tumblr-icon.png", size: "30x30")  %>
+          <% elsif post.content_type == "rss" %> 
+            <%=image_tag("Rss-icon.png", size: "30x30")  %>
+        <% end %>
+      
         <div class="lead author">
           <ul>
             <li>

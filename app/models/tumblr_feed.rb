@@ -11,7 +11,7 @@ class TumblrFeed < Feed
       config.oauth_token = ENV["TUMBLR_OAUTH_ACCESS_TOKEN"]
       config.oauth_token_secret = ENV["TUMBLR_OAUTH_SECRET_TOKEN"]
     end
-    client = Tumblr::Client.new
+    Tumblr::Client.new
   end
 
   #def self.api_posts(thing_to_follow)
@@ -20,7 +20,6 @@ class TumblrFeed < Feed
   #search method in feedcontroller
 
   def api_posts #self.api_posts()
-    #TumblrFeed.api_posts(self.uid)
     TumblrFeed.client.posts(self.uid)
   end
 
